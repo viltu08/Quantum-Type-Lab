@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Type Lab</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'Atomic';
+            src: url('https://github.com/viltu08/Atomic/blob/71a9ec56a3bc06750670c1d050b2162384ab78cd/AtomicVF.woff2') format('woff2');
+            font-weight: 100 900;
+            font-stretch: 75% 125%;
+        }
+
+        @font-face {
+            font-family: 'Particles';
+            src: url('https://raw.githubusercontent.com/viltu08/Atomic/e64666c2cf9dafdb77b43601f3bd3c9f1c19cf48/ParticlesVF.woff2') format('woff2');
+            font-weight: 100 900;
+            font-stretch: 75% 125%;
+        }
+
+        body, html {
+            background-color: black;
+            color: white;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            width: 300vw;
+            height: 100vh;
+            cursor: none;
+            scroll-behavior: smooth;
+        }
+
+        h1 {
+            font-size: 100px;
+            font-weight: 400;
+            display: flex;
+            gap: 5px;
+            font-family: 'Particles';
+            color: #4D4DFF;
+        }
+
+        .particles .char {
+            display: inline-block;
+            color: #4D4DFF;
+            transition: color 0.5s ease;
+        }
+
+        .particles .char:hover {
+            color: #FFFF00;
+        }
+
+        /* Layout */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, 100vw);
+            height: 100vh;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            padding: 2rem;
+        }
+
+        /* Styling for Scrollbar */
+        ::-webkit-scrollbar {
+            width: 25px;
+            height: 25px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb:horizontal {
+            background: linear-gradient(to right, #FF5733, #FF33A8, #A3FF33, #33FF57);
+            border-radius: 10px;
+            border: 1px solid white;
+        }
+
+        ::selection {
+            background-color: yellow;
+            color: black;
+        }
+
+        /* Cursor */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: yellow;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            position: absolute;
+            z-index: 1000;
+        }
+
+        /* Cursor trail */
+        .trail {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: yellow;
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.5;
+            z-index: 999;
+            animation: fadeOut 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 0.5; }
+            100% { opacity: 0; }
+        }
+
+        /* Electrons */
+        .electron {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            position: absolute;
+            animation: floatElectron 10s linear infinite;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+            z-index: 998;
+        }
+
+        .electron:nth-child(4n+1) {
+            background: linear-gradient(135deg, #FF5733, #FF8D1A);
+        }
+        .electron:nth-child(4n+2) {
+            background: linear-gradient(135deg, #FF33A8, #FF66B2);
+        }
+        .electron:nth-child(4n+3) {
+            background: linear-gradient(135deg, #A3FF33, #C4FF57);
+        }
+        .electron:nth-child(4n) {
+            background: linear-gradient(135deg, #33FF57, #66FF8A);
+        }
+
+        @keyframes floatElectron {
+            0% { transform: translateY(0) translateX(0); opacity: 1; }
+            25% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
+            50% { transform: translateY(20px) translateX(-10px); opacity: 0.6; }
+            75% { transform: translateY(-20px) translateX(20px); opacity: 0.8; }
+            100% { transform: translateY(0) translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="section" style="background-color: #1a1a1a;">
+            <h1 class="particles">
+                <span class="char">Q</span>
+                <span class="char">U</span>
+                <span class="char">A</span>
+                <span class="char">N</span>
+                <span class="char">T</span>
+                <span class="char">U</span>
+                <span class="char">M</span><br>
+              
+                <span class="char">T</span>
+                <span class="char">Y</span>
+                <span class="char">P</span>
+                <span class="char">E</span><br>
+              
+                <span class="char">L</span>
+                <span class="char">A</span>
+                <span class="char">B</span>
+            </h1>
+        </section>
+        <section class="section" style="background-color: #333333;">Particles</section>
+        <section class="section" style="background-color: #4d4d4d;">Atomic</section>
+        <section class="section" style="background-color: #1a1a1a;">
+            <img src="https://res.cloudinary.com/dpzpn3dkw/image/upload/v1723187480/SEOContent/Chemistry/Periodic_Table_lmdutr.png">
+        </section>
+    </div>
+
+    <script>
+        // Custom cursor logic
+        let cursor = document.createElement('div');
+        cursor.classList.add('cursor');
+        document.body.appendChild(cursor);
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.pageX - 10}px`;
+            cursor.style.top = `${e.pageY - 10}px`;
+
+            const trail = document.createElement('div');
+            trail.classList.add('trail');
+            trail.style.left = `${e.pageX - 10}px`;
+            trail.style.top = `${e.pageY - 10}px`;
+            document.body.appendChild(trail);
+
+            setTimeout(() => {
+                trail.remove();
+            }, 500);
+        });
+
+        // Particles font variation on hover
+        document.querySelectorAll('.particles .char').forEach(char => {
+            char.addEventListener('mouseover', () => {
+                char.style.transition = "font-variation-settings 1s ease";
+                char.style.fontVariationSettings = "'POSI' 1000, 'SHAP' 1000";
+            });
+
+            char.addEventListener('mouseout', () => {
+                char.style.transition = "font-variation-settings 1s ease";
+                char.style.fontVariationSettings = "'POSI' 0, 'SHAP' 0";
+            });
+        });
+
+        // Generate electrons
+        for (let i = 0; i < 100; i++) {
+            const electron = document.createElement("div");
+            electron.classList.add("electron");
+            electron.style.top = `${Math.random() * 100}vh`;
+            electron.style.left = `${Math.random() * 300}vw`;
+            electron.style.animationDuration = `${10 + Math.random() * 5}s`;
+            document.body.appendChild(electron);
+        }
+    </script>
+</body>
+</html>
