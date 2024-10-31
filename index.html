@@ -26,33 +26,52 @@
         }
 
         body, html {
-            background-color: black;
-            color: white;
-            overflow-x: scroll;
-            overflow-y: hidden;
-            width: 300vw;
-            height: 100vh;
-            cursor: none;
-            scroll-behavior: smooth;
-        }
+        background-color: black;
+        color: white;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        height: 100vh;
+        width: 100vw;
+        cursor: none;
+        scroll-behavior: smooth;
+    }
 
         h1 {
-            font-size: 100px;
+            font-size: 120px;
             font-weight: 400;
             display: flex;
             gap: 5px;
             font-family: 'Particles';
             color: #4D4DFF;
         }
+h1.particles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
 
-        .particles .char {
-            display: inline-block;
-            color: #4D4DFF;
-            transition: color 0.5s ease;
-        }
+.line {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+  .particles .char {
+    display: inline-block;
+    color: #4D4DFF;
+    transform: scale(1);
+    font-variation-settings: 'POSI' 0, 'SHAP' 0;
+    transition: color 3s ease-out, transform 4s ease-out, font-variation-settings 4s ease-out;
+	  position: relative;
+}
 
-        .particles .char:hover {
-            color: #FFFF00;
+.particles .char:hover {
+    color: #FFFF00;
+    transform: scale(4);
+	z-index: 10;
+}
+		 .particles .char:not(:hover) {
+            transition: transform 4s ease-out, color 4s ease-out;
         }
 
         /* Layout */
@@ -60,6 +79,7 @@
             display: grid;
             grid-template-columns: repeat(5, 100vw);
             height: 100vh;
+            overflow-x: scroll;
         }
 
         .section {
@@ -155,26 +175,32 @@
 </head>
 <body>
     <div class="container">
-        <section class="section" style="background-color: #1a1a1a;">
-            <h1 class="particles">
-                <span class="char">Q</span>
-                <span class="char">U</span>
-                <span class="char">A</span>
-                <span class="char">N</span>
-                <span class="char">T</span>
-                <span class="char">U</span>
-                <span class="char">M</span><br>
-              
-                <span class="char">T</span>
-                <span class="char">Y</span>
-                <span class="char">P</span>
-                <span class="char">E</span><br>
-              
-                <span class="char">L</span>
-                <span class="char">A</span>
-                <span class="char">B</span>
-            </h1>
-        </section>
+        <section class="section" style="background-color: black;">
+<h1 class="particles">
+    <div class="line">
+        <span class="char">Q</span>
+        <span class="char">U</span>
+        <span class="char">A</span>
+        <span class="char">N</span>
+        <span class="char">T</span>
+        <span class="char">U</span>
+        <span class="char">M</span>
+    </div>
+    <div class="line">
+        <span class="char">T</span>
+        <span class="char">Y</span>
+        <span class="char">P</span>
+        <span class="char">E</span>
+    </div>
+    <div class="line">
+        <span class="char">L</span>
+        <span class="char">A</span>
+        <span class="char">B</span>
+    </div>
+</h1>
+
+</section>
+
         <section class="section" style="background-color: #333333;">Particles</section>
         <section class="section" style="background-color: #4d4d4d;">Atomic</section>
         <section class="section" style="background-color: #1a1a1a;">
@@ -203,18 +229,25 @@
             }, 500);
         });
 
-        // Particles font variation on hover
-        document.querySelectorAll('.particles .char').forEach(char => {
-            char.addEventListener('mouseover', () => {
-                char.style.transition = "font-variation-settings 1s ease";
-                char.style.fontVariationSettings = "'POSI' 1000, 'SHAP' 1000";
-            });
 
-            char.addEventListener('mouseout', () => {
-                char.style.transition = "font-variation-settings 1s ease";
-                char.style.fontVariationSettings = "'POSI' 0, 'SHAP' 0";
-            });
+   // Particles font variation on hover with smooth transitions
+    document.querySelectorAll('.particles .char').forEach(char => {
+        char.addEventListener('mouseover', () => {
+            char.style.transition = "font-variation-settings 3s ease, color 3s ease, transform 4s ease";
+            char.style.fontVariationSettings = "'POSI' 1000, 'SHAP' 1000";
+            char.style.transform = "scale(4)";
+            char.style.color = "#FFFF00";
+            char.style.zIndex = "10";
         });
+
+        char.addEventListener('mouseout', () => {
+            char.style.transition = "font-variation-settings 3s ease, color 3s ease, transform 4s ease";
+            char.style.fontVariationSettings = "'POSI' 0, 'SHAP' 0";
+            char.style.transform = "scale(1)";
+            char.style.color = "#4D4DFF";
+            char.style.zIndex = "";
+        });
+    });
 
         // Generate electrons
         for (let i = 0; i < 100; i++) {
