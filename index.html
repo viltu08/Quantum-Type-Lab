@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quantum Type Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -64,6 +65,26 @@
             color: #4D4DFF;
             text-align: center;
             line-height: 100px;
+        }
+
+    .floater {
+            position: absolute;
+            padding: 20px;
+            border: 2px solid yellow;
+            border-radius: 15px;
+            background-color: transparent;
+            cursor: grab;
+            color: #4D4DFF;
+            transition: border-color 0.3s, color 0.3s;
+            font-family: 'Space Mono', monospace;
+		font-size: 15px;
+		width: 30%;
+        }
+
+        .floater:hover {
+            border-color: #FFFF00;
+            color: #FFFF00;
+            cursor: grabbing;
         }
 
         .line {
@@ -385,6 +406,7 @@
                 </div>
             </h1>
 
+			<div class="floater" style="top: 700px; left: 50px;">Quantum Type Lab is a digital gallery for experimental typography inspired by my scientific curiosities, exploring intersections of atomic structures, elemental periodicity, and the transformative potential of variable typefaces.</div>
         </section>
 
         <section class="sectiontwo" style="background-color: black;">
@@ -606,6 +628,40 @@
         }
         isPlaying = !isPlaying;
     });
+		
+		  // Make floaters draggable
+        const floaters = document.querySelectorAll('.floater');
+        floaters.forEach(floater => {
+            floater.onmousedown = function (event) {
+                let shiftX = event.clientX - floater.getBoundingClientRect().left;
+                let shiftY = event.clientY - floater.getBoundingClientRect().top;
+
+                floater.style.position = 'absolute';
+                floater.style.zIndex = 1000;
+
+                moveAt(event.pageX, event.pageY);
+
+                function moveAt(pageX, pageY) {
+                    floater.style.left = pageX - shiftX + 'px';
+                    floater.style.top = pageY - shiftY + 'px';
+                }
+
+                function onMouseMove(event) {
+                    moveAt(event.pageX, event.pageY);
+                }
+
+                document.addEventListener('mousemove', onMouseMove);
+
+                floater.onmouseup = function () {
+                    document.removeEventListener('mousemove', onMouseMove);
+                    floater.onmouseup = null;
+                };
+            };
+
+            floater.ondragstart = function () {
+                return false;
+            };
+        });
         
         
 </script>
