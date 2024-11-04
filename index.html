@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
 
         @font-face {
             font-family: 'Atomic';
-            src: url('https://github.com/viltu08/Atomic/blob/71a9ec56a3bc06750670c1d050b2162384ab78cd/AtomicVF.woff2') format('woff2');
+            src: url('https://github.com/viltu08/Atomic/blob/8e2dc143223f3365e1508fed389887c17d117c0b/AtomicVF.woff2') format('woff2');
             font-weight: 100 900;
             font-stretch: 75% 125%;
         }
@@ -25,16 +26,17 @@
             font-stretch: 75% 125%;
         }
 
-        body, html {
-        background-color: black;
-        color: white;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        height: 100vh;
-        width: 100vw;
-        cursor: none;
-        scroll-behavior: smooth;
-    }
+        body,
+        html {
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            height: 100vh;
+            width: 100vw;
+            cursor: none;
+            scroll-behavior: smooth;
+        }
 
         h1 {
             font-size: 120px;
@@ -44,33 +46,67 @@
             font-family: 'Particles';
             color: #4D4DFF;
         }
-h1.particles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
 
-.line {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-  .particles .char {
-    display: inline-block;
-    color: #4D4DFF;
-    transform: scale(1);
-    font-variation-settings: 'POSI' 0, 'SHAP' 0;
-    transition: color 3s ease-out, transform 4s ease-out, font-variation-settings 4s ease-out;
-	  position: relative;
-}
+        h1.particles {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
 
-.particles .char:hover {
-    color: #FFFF00;
-    transform: scale(4);
-	z-index: 10;
-}
-		 .particles .char:not(:hover) {
+
+        h2 {
+            font-size: 120px;
+            font-weight: 400;
+            display: flex;
+            gap: 5px;
+            font-family: 'Atomic';
+            color: #4D4DFF;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .line {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .particles .char {
+            display: inline-block;
+            color: #4D4DFF;
+            transform: scale(1);
+            font-variation-settings: 'POSI' 0, 'SHAP' 0;
+            transition: color 3s ease-out, transform 4s ease-out, font-variation-settings 4s ease-out;
+            position: relative;
+        }
+
+        .particles .char:hover {
+            color: #FFFF00;
+            transform: scale(4);
+            z-index: 10;
+        }
+
+        .particles .char:not(:hover) {
+            transition: transform 4s ease-out, color 4s ease-out;
+        }
+        
+              .particles .chartwo {
+            display: inline-block;
+            color: #4D4DFF;
+            transform: scale(1);
+            font-variation-settings: 'POSI' 0, 'SHAP' 0;
+            transition: color 3s ease-out, transform 4s ease-out, font-variation-settings 4s ease-out;
+            position: relative;
+        }
+
+        .particles .chartwo:hover {
+            color: #FFFF00;
+            transform: scale(2);
+            z-index: 10;
+        }
+
+        .particles .chartwo:not(:hover) {
             transition: transform 4s ease-out, color 4s ease-out;
         }
 
@@ -80,15 +116,24 @@ h1.particles {
             grid-template-columns: repeat(5, 100vw);
             height: 100vh;
             overflow-x: scroll;
+            overflow-y: hidden;
         }
 
         .section {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             font-size: 2rem;
-            padding: 2rem;
+            padding: 10rem;
+        }
+
+        .sectiontwo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1rem;
+            padding: 5rem;
+            text-align: center;
         }
 
         /* Styling for Scrollbar */
@@ -96,14 +141,26 @@ h1.particles {
             width: 25px;
             height: 25px;
         }
+
         ::-webkit-scrollbar-track {
             background: transparent;
         }
+
         ::-webkit-scrollbar-thumb:horizontal {
             background: linear-gradient(to right, #FF5733, #FF33A8, #A3FF33, #33FF57);
             border-radius: 10px;
             border: 1px solid white;
         }
+
+        /* Grabbable scrollbar styling */
+        ::-webkit-scrollbar-thumb {
+            cursor: none;
+        }
+
+        ::-webkit-scrollbar-thumb:active {
+            cursor: grabbing;
+        }
+
 
         ::selection {
             background-color: yellow;
@@ -136,8 +193,13 @@ h1.particles {
         }
 
         @keyframes fadeOut {
-            0% { opacity: 0.5; }
-            100% { opacity: 0; }
+            0% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 0;
+            }
         }
 
         /* Electrons */
@@ -154,83 +216,270 @@ h1.particles {
         .electron:nth-child(4n+1) {
             background: linear-gradient(135deg, #FF5733, #FF8D1A);
         }
+
         .electron:nth-child(4n+2) {
             background: linear-gradient(135deg, #FF33A8, #FF66B2);
         }
+
         .electron:nth-child(4n+3) {
             background: linear-gradient(135deg, #A3FF33, #C4FF57);
         }
+
         .electron:nth-child(4n) {
             background: linear-gradient(135deg, #33FF57, #66FF8A);
         }
 
         @keyframes floatElectron {
-            0% { transform: translateY(0) translateX(0); opacity: 1; }
-            25% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
-            50% { transform: translateY(20px) translateX(-10px); opacity: 0.6; }
-            75% { transform: translateY(-20px) translateX(20px); opacity: 0.8; }
-            100% { transform: translateY(0) translateX(0); opacity: 1; }
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+
+            25% {
+                transform: translateY(-20px) translateX(10px);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translateY(20px) translateX(-10px);
+                opacity: 0.6;
+            }
+
+            75% {
+                transform: translateY(-20px) translateX(20px);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Text input with gradient outline */
+        .text-box-wrapper {
+            padding: 5px;
+            border-radius: 15px;
+            background: linear-gradient(90deg, #FF5733, #FF33A8, #A3FF33, #33FF57);
+            background-size: 150% 150%;
+            animation: gradientAnimation 4s ease infinite;
+            width: 100%;
+            margin-top: 20px;
+			border: 5px solid transparent;
+    background-clip: padding-box;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .text-box {
+            width: 100%;
+            height: 200px;
+            padding: 0px;
+            border: none;
+            border-radius: 10px;
+            background-color: #1a1a1a;
+            color: yellow;
+            font-family: 'Atomic';
+            font-size: 10rem;
+            resize: none;
+            text-align: center;
+        }
+
+        /* Sliders for font axes */
+        .slider-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        .slider-container label {
+            font-family: 'Particles';
+            color: #A3FF33;
+            font-size: 2rem;
+        }
+
+        .slider-container input[type="range"] {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 8px;
+            border-radius: 5px;
+            background: #4D4DFF;
+            outline: none;
+            transition: background 0.2s;
+        }
+
+        .slider-container input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #FF5733;
+            cursor: pointer;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .slider-container input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #FF5733;
+            cursor: pointer;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        #playPauseButton {
+            background: #4D4DFF;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            padding: 20px;
+            border-radius: 50%;
+        }
+
+        svg {
+            width: 30px;
+            height: 30px;
+            fill: #FF5733;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <section class="section" style="background-color: black;">
-<h1 class="particles">
-    <div class="line">
-        <span class="char">Q</span>
-        <span class="char">U</span>
-        <span class="char">A</span>
-        <span class="char">N</span>
-        <span class="char">T</span>
-        <span class="char">U</span>
-        <span class="char">M</span>
-    </div>
-    <div class="line">
-        <span class="char">T</span>
-        <span class="char">Y</span>
-        <span class="char">P</span>
-        <span class="char">E</span>
-    </div>
-    <div class="line">
-        <span class="char">L</span>
-        <span class="char">A</span>
-        <span class="char">B</span>
-    </div>
-</h1>
+            <h1 class="particles">
+                <div class="line">
+                    <span class="char">Q</span>
+                    <span class="char">U</span>
+                    <span class="char">A</span>
+                    <span class="char">N</span>
+                    <span class="char">T</span>
+                    <span class="char">U</span>
+                    <span class="char">M</span>
+                </div>
+                <div class="line">
+                    <span class="char">T</span>
+                    <span class="char">Y</span>
+                    <span class="char">P</span>
+                    <span class="char">E</span>
+                </div>
+                <div class="line">
+                    <span class="char">L</span>
+                    <span class="char">A</span>
+                    <span class="char">B</span>
+                </div>
+            </h1>
 
-</section>
+        </section>
 
-        <section class="section" style="background-color: #333333;">Particles</section>
-        <section class="section" style="background-color: #4d4d4d;">Atomic</section>
-        <section class="section" style="background-color: #1a1a1a;">
-            <img src="https://res.cloudinary.com/dpzpn3dkw/image/upload/v1723187480/SEOContent/Chemistry/Periodic_Table_lmdutr.png">
+        <section class="sectiontwo" style="background-color: black;">
+            <h1 CLASS="particles">
+                <div class="line">
+                    <span class="chartwo">A</span>
+                    <span class="chartwo">T</span>
+                    <span class="chartwo">O</span>
+                    <span class="chartwo">M</span>
+                    <span class="chartwo">I</span>
+                    <span class="chartwo">C</span>
+                </div>
+
+            </h1>
+
+            <!-- Text input with animated gradient border -->
+            <div class="text-box-wrapper">
+                <textarea class="text-box" placeholder="TYPE HERE..."></textarea>
+            </div>
+<BR>
+           <!-- Play/Pause Button -->
+          <button id="playPauseButton">
+            <svg id="playIcon" viewBox="0 0 24 24">
+              <polygon id="playIconPolygon" points="5,3 19,12 5,21" />
+            </svg>
+          </button>
+            
+            <!-- Sliders for font axes control -->
+            <div class="slider-container">
+                <label for="orbitSlider">ORBIT</label>
+                <input type="range" id="orbitSlider" min="0" max="1000" step="1" value="400" />
+<BR>
+                <label for="nucleusSlider">NUCLEUS</label>
+                <input type="range" id="nucleusSlider" min="0" max="1000" step="1" value="100" />
+            </div>
+        </section>
+
+        <section class="section" style="background-color: #00000;">
+		</section>
+        <section class="section" style="background-color: #000000;">
+ 
         </section>
     </div>
 
     <script>
-        // Custom cursor logic
-        let cursor = document.createElement('div');
-        cursor.classList.add('cursor');
-        document.body.appendChild(cursor);
+    // Create the custom cursor element
+    let cursor = document.createElement('div');
+    cursor.classList.add('cursor');
+    document.body.appendChild(cursor);
 
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = `${e.pageX - 10}px`;
-            cursor.style.top = `${e.pageY - 10}px`;
+    // Track if the scrollbar is being dragged
+    let isDraggingScrollbar = false;
 
-            const trail = document.createElement('div');
-            trail.classList.add('trail');
-            trail.style.left = `${e.pageX - 10}px`;
-            trail.style.top = `${e.pageY - 10}px`;
-            document.body.appendChild(trail);
+    // Track mouse movements for custom cursor positioning
+    document.addEventListener('mousemove', (e) => {
+        // Update cursor position even if scrollbar is dragged
+        cursor.style.left = `${e.pageX - 10}px`;
+        cursor.style.top = `${e.pageY - 10}px`;
 
-            setTimeout(() => {
-                trail.remove();
-            }, 500);
-        });
+        // Add a trailing effect
+        const trail = document.createElement('div');
+        trail.classList.add('trail');
+        trail.style.left = `${e.pageX - 10}px`;
+        trail.style.top = `${e.pageY - 10}px`;
+        document.body.appendChild(trail);
 
+        setTimeout(() => {
+            trail.remove();
+        }, 500);
+    });
 
-   // Particles font variation on hover with smooth transitions
+    // Detect when the user clicks to drag the scrollbar
+    const container = document.querySelector('.container');
+    container.addEventListener('mousedown', (e) => {
+        if (e.target === container) {
+            isDraggingScrollbar = true;
+            cursor.style.cursor = "grabbing"; // Optional: change cursor style
+        }
+    });
+
+    // Stop drag state when mouse is released
+    document.addEventListener('mouseup', () => {
+        isDraggingScrollbar = false;
+        cursor.style.cursor = "none"; // Optional: revert cursor style
+    });
+
+    // Ensure cursor follows even while dragging
+    container.addEventListener('scroll', () => {
+        if (isDraggingScrollbar) {
+            // This will force the cursor to update position continuously
+            cursor.style.left = `${container.scrollLeft + 20}px`;
+        }
+    });
+
+    // Particles font variation on hover with smooth transitions
     document.querySelectorAll('.particles .char').forEach(char => {
         char.addEventListener('mouseover', () => {
             char.style.transition = "font-variation-settings 3s ease, color 3s ease, transform 4s ease";
@@ -249,15 +498,118 @@ h1.particles {
         });
     });
 
-        // Generate electrons
-        for (let i = 0; i < 100; i++) {
-            const electron = document.createElement("div");
-            electron.classList.add("electron");
-            electron.style.top = `${Math.random() * 100}vh`;
-            electron.style.left = `${Math.random() * 300}vw`;
-            electron.style.animationDuration = `${10 + Math.random() * 5}s`;
-            document.body.appendChild(electron);
+    // Particles font variation on hover with smooth transitions for .chartwo
+    document.querySelectorAll('.particles .chartwo').forEach(chartwo => {
+        chartwo.addEventListener('mouseover', () => {
+            chartwo.style.transition = "font-variation-settings 3s ease, color 3s ease, transform 4s ease";
+            chartwo.style.fontVariationSettings = "'POSI' 1000, 'SHAP' 1000";
+            chartwo.style.transform = "scale(2)";
+            chartwo.style.color = "#FFFF00";
+            chartwo.style.zIndex = "10";
+        });
+
+        chartwo.addEventListener('mouseout', () => {
+            chartwo.style.transition = "font-variation-settings 3s ease, color 3s ease, transform 4s ease";
+            chartwo.style.fontVariationSettings = "'POSI' 0, 'SHAP' 0";
+            chartwo.style.transform = "scale(1)";
+            chartwo.style.color = "#4D4DFF";
+            chartwo.style.zIndex = "";
+        });
+    });
+
+    // Generate electrons
+    for (let i = 0; i < 100; i++) {
+        const electron = document.createElement("div");
+        electron.classList.add("electron");
+        electron.style.top = `${Math.random() * 100}vh`;
+        electron.style.left = `${Math.random() * 300}vw`;
+        electron.style.animationDuration = `${10 + Math.random() * 5}s`;
+        document.body.appendChild(electron);
+    }
+
+    // Update Atomic font based on slider inputs
+    const orbitSlider = document.getElementById('orbitSlider');
+    const nucleusSlider = document.getElementById('nucleusSlider');
+    const textBox = document.querySelector('.text-box');
+
+    function updateFontVariation() {
+        const orbit = orbitSlider.value;
+        const nucleus = nucleusSlider.value;
+        textBox.style.fontVariationSettings = `"ORBT" ${orbit}, "NCLS" ${nucleus}`;
+    }
+
+    orbitSlider.addEventListener('input', updateFontVariation);
+    nucleusSlider.addEventListener('input', updateFontVariation);
+
+        
+    // Automatic Play Button Functionality
+    const playPauseButton = document.getElementById('playPauseButton');
+    const playIconPolygon = document.getElementById('playIconPolygon');
+    let isPlaying = false;
+    let intervalId;
+
+    // Direction variables to track if sliders are increasing or decreasing
+    let orbitDirection = 1; // 1 means increasing, -1 means decreasing
+    let nucleusDirection = 1;
+
+    function startAnimation() {
+        const orbitMin = parseInt(orbitSlider.min);
+        const orbitMax = parseInt(orbitSlider.max);
+        const nucleusMin = parseInt(nucleusSlider.min);
+        const nucleusMax = parseInt(nucleusSlider.max);
+
+        intervalId = setInterval(() => {
+            // Update orbit slider
+            let orbitValue = parseInt(orbitSlider.value);
+            orbitValue += orbitDirection;
+
+            if (orbitValue >= orbitMax) {
+                orbitValue = orbitMax;
+                orbitDirection = -1; // Change direction to decreasing
+            } else if (orbitValue <= orbitMin) {
+                orbitValue = orbitMin;
+                orbitDirection = 1; // Change direction to increasing
+            }
+
+            orbitSlider.value = orbitValue;
+
+            // Update nucleus slider
+            let nucleusValue = parseInt(nucleusSlider.value);
+            nucleusValue += nucleusDirection;
+
+            if (nucleusValue >= nucleusMax) {
+                nucleusValue = nucleusMax;
+                nucleusDirection = -1; // Change direction to decreasing
+            } else if (nucleusValue <= nucleusMin) {
+                nucleusValue = nucleusMin;
+                nucleusDirection = 1; // Change direction to increasing
+            }
+
+            nucleusSlider.value = nucleusValue;
+
+            // Update the font variation based on slider values
+            updateFontVariation();
+        }, 5); // Control animation speed
+    }
+
+    function stopAnimation() {
+        clearInterval(intervalId);
+    }
+
+    playPauseButton.addEventListener('click', () => {
+        if (isPlaying) {
+            stopAnimation();
+            playIconPolygon.setAttribute('points', '5,3 19,12 5,21'); // Change to play icon
+        } else {
+            startAnimation();
+            playIconPolygon.setAttribute('points', '6,4 6,20 10,20 10,4 14,4 14,20 18,20 18,4'); // Change to pause icon
         }
-    </script>
+        isPlaying = !isPlaying;
+    });
+        
+        
+</script>
+
 </body>
+
 </html>
