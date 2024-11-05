@@ -7,12 +7,13 @@
     <title>Quantum Type Lab</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
+       
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+ /* Import variable typefaces ATOMIC and PARTICLES */
         @font-face {
             font-family: 'Atomic';
             src: url('https://raw.githubusercontent.com/viltu08/Quantum-Type-Lab/b2e3c08753d63cf111a7de564f4398bc28aae64d/AtomicVF.woff2') format('woff2');
@@ -27,6 +28,8 @@
             font-stretch: 75% 125%;
         }
 
+ /* Basic body template with black background and no vertical scrolling. Cursor is none to activate custom cursor */
+
         body,
         html {
             background-color: black;
@@ -37,6 +40,7 @@
             scroll-behavior: smooth;
         }
 
+        /* Different heading styles */
         h1 {
             font-size: 120px;
             font-weight: 400;
@@ -65,6 +69,8 @@
             line-height: 100px;
         }
 
+/* the floating project description boxes. Position is absolute here and flex in sections so that they move with the page when scrolled */
+
     .floater {
             position: absolute;
             padding: 20px;
@@ -86,12 +92,14 @@
             cursor: grabbing;
         }
 
+
         .line {
             display: flex;
             justify-content: center;
             gap: 10px;
         }
 
+        /* When Particles typeface is used for QUANTUM TYPE LAB */
         .particles .char {
             display: inline-block;
             color: #4D4DFF;
@@ -111,6 +119,8 @@
             transition: transform 4s ease-out, color 4s ease-out;
         }
         
+/* When PARTCILES typeface is used above ATOMIC typebox where users can type in*/
+
               .particles .chartwo {
             display: flex;
             color: #4D4DFF;
@@ -130,13 +140,14 @@
             transition: transform 4s ease-out, color 4s ease-out;
         }
 
-        /* Layout */
+        /* General container layout which is flex to contain he whole site */
         .container {
             display: flex;
             height: 100vh;
             overflow-x: scroll;
             overflow-y: hidden;
         }
+/* Sections treated as one screen at a time with flex view */
 
         .section {
             display: flex;
@@ -190,7 +201,7 @@
             color: black;
         }
 
-        /* Cursor */
+        /* Custom Cursor */
         .cursor {
             width: 20px;
             height: 20px;
@@ -225,7 +236,7 @@
             }
         }
 
-        /* Electrons */
+        /* Electrons which are spread all over the website */
         .electron {
             width: 8px;
             height: 8px;
@@ -279,7 +290,7 @@
             }
         }
 
-        /* Text input with gradient outline */
+        /* Text input where users type with gradient outline */
         .text-box-wrapper {
             padding: 5px;
             border-radius: 15px;
@@ -320,7 +331,7 @@
             text-align: center;
         }
 
-        /* Sliders for font axes */
+        /* Sliders for font axes to manimupate the written type */
         .slider-container {
             display: flex;
             flex-direction: column;
@@ -377,12 +388,14 @@
         #slider {
             padding: 20px;
         }
-
+/* Play button */
         svg {
             width: 30px;
             height: 30px;
             fill: #FF5733;
         }
+
+/* The second section where there are auto-animated glyphs */
 
  #particles-word {
             font-family: 'Particles', sans-serif;
