@@ -33,9 +33,9 @@
         body,
         html {
             background-color: black;
-            overflow-y: hidden;
-            height: 100vh;
-            width: 100vw;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
             cursor: none;
             scroll-behavior: smooth;
         }
@@ -399,10 +399,10 @@
 
  #particles-word {
             font-family: 'Particles', sans-serif;
-            font-size: 15rem;
-            font-weight: bold;
-            text-transform: uppercase;
+            font-size: 7rem;
             color: #FF5733;
+	 padding:100px;
+	 line-height:60px;
         }
     </style>
 </head>
@@ -436,15 +436,19 @@
 
 			<div class="floater" style="top: 500px; left: 50px;">Quantum Type Lab is a digital gallery for experimental typography inspired by my scientific curiosities, exploring intersections of atomic structures, elemental periodicity, and the transformative potential of variable typefaces.</div>
 
-<div class="floater" style="top: 400px; left: 1200px;">This project treats typography as a mutable entity—one that, like atoms, can exist in different states: ground, excited, ionized or nuclear. </div>
+<div class="floater" style="top: 400px; left: 1000px;">This project treats typography as a mutable entity—one that, like atoms, can exist in different states: ground, excited, ionized or nuclear. </div>
 			
-		<div class="floater" style="top: 700px; left: 1000px;">	Typography here is not static; it mutates, transforming from one form to another and embodying the fluidity of both waves and particles as in quantum theory. </div>
+		<div class="floater" style="top: 700px; left: 900px;">	Typography here is not static; it mutates, transforming from one form to another and embodying the fluidity of both waves and particles as in quantum theory. </div>
         </section>
 
 <section class="section" style="background-color: black;">
-<div id="particles-word">*</div>
+<div id="particles-word">a+b=c</div>
 
           <div class="floater" style="top: 500px; left: 50px;"> This immersive experience allows users to engage with typography that abstracts scientific principles through interactive visualizations.   </div>
+
+ <div class="floater" style="top: 700px; left: 800px;">
+Driven by a systematic approach to depth, complexity, and generative methods, Quantum Type Lab strives to merge scientific rigor with artistic expression. </div>
+
 		</section>
 
         <section class="sectiontwo" style="background-color: black;">
@@ -502,8 +506,8 @@
 
     function animateParticlesWord() {
         // Update POSI and SHAP values
-        posiValue += posiDirection * 10;
-        shapValue += shapDirection * 10;
+        posiValue += posiDirection * 1;
+        shapValue += shapDirection * 1;
 
          // Ensure POSI and SHAP values are within the 0 to 1000 range
         if (posiValue > 1000) {
