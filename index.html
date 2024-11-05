@@ -30,8 +30,6 @@
         body,
         html {
             background-color: black;
-            color: white;
-            overflow-x: hidden;
             overflow-y: hidden;
             height: 100vh;
             width: 100vw;
@@ -79,6 +77,7 @@
             font-family: 'Space Mono', monospace;
 		font-size: 15px;
 		width: 30%;
+        text-align: left;
         }
 
         .floater:hover {
@@ -113,7 +112,7 @@
         }
         
               .particles .chartwo {
-            display: inline-block;
+            display: flex;
             color: #4D4DFF;
             transform: scale(1);
             font-variation-settings: 'POSI' 0, 'SHAP' 0;
@@ -133,8 +132,7 @@
 
         /* Layout */
         .container {
-            display: grid;
-            grid-template-columns: repeat(5, 100vw);
+            display: flex;
             height: 100vh;
             overflow-x: scroll;
             overflow-y: hidden;
@@ -143,6 +141,7 @@
         .section {
             display: flex;
             flex-direction: column;
+            min-width: 100vw;
             align-items: center;
             font-size: 2rem;
             padding: 10rem;
@@ -152,10 +151,12 @@
         .sectiontwo {
             display: flex;
             flex-direction: column;
+            min-width: 100vw;
             align-items: center;
             font-size: 1rem;
             padding: 5rem;
             text-align: center;
+            position: relative;
         }
 
         /* Styling for Scrollbar */
@@ -285,7 +286,7 @@
             background: linear-gradient(90deg, #FF5733, #FF33A8, #A3FF33, #33FF57);
             background-size: 150% 150%;
             animation: gradientAnimation 4s ease infinite;
-            width: 100%;
+            width: 80%;
             margin-top: 20px;
 			border: 5px solid transparent;
     background-clip: padding-box;
@@ -373,16 +374,29 @@
             border-radius: 50%;
         }
 
+        #slider {
+            padding: 20px;
+        }
+
         svg {
             width: 30px;
             height: 30px;
             fill: #FF5733;
+        }
+
+ #particles-word {
+            font-family: 'Particles', sans-serif;
+            font-size: 15rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #FF5733;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
+
         <section class="section" style="background-color: black;">
             <h1 class="particles">
                 <div class="line">
@@ -407,12 +421,18 @@
                 </div>
             </h1>
 
-			<div class="floater" style="top: 700px; left: 50px;">Quantum Type Lab is a digital gallery for experimental typography inspired by my scientific curiosities, exploring intersections of atomic structures, elemental periodicity, and the transformative potential of variable typefaces.</div>
+			<div class="floater" style="top: 500px; left: 50px;">Quantum Type Lab is a digital gallery for experimental typography inspired by my scientific curiosities, exploring intersections of atomic structures, elemental periodicity, and the transformative potential of variable typefaces.</div>
 
 <div class="floater" style="top: 400px; left: 1200px;">This project treats typography as a mutable entity—one that, like atoms, can exist in different states: ground, excited, ionized or nuclear. </div>
 			
-		<div class="floater" style="top: 600px; left: 1200px;">	Typography here is not static; it mutates, transforming from one form to another and embodying the fluidity of both waves and particles as in quantum theory. </div>
+		<div class="floater" style="top: 700px; left: 1000px;">	Typography here is not static; it mutates, transforming from one form to another and embodying the fluidity of both waves and particles as in quantum theory. </div>
         </section>
+
+<section class="section" style="background-color: black;">
+<div id="particles-word">*</div>
+
+          <div class="floater" style="top: 500px; left: 50px;"> This immersive experience allows users to engage with typography that abstracts scientific principles through interactive visualizations.   </div>
+		</section>
 
         <section class="sectiontwo" style="background-color: black;">
             <h1 CLASS="particles">
@@ -438,15 +458,17 @@
               <polygon id="playIconPolygon" points="5,3 19,12 5,21" />
             </svg>
           </button>
-            
+
             <!-- Sliders for font axes control -->
-            <div class="slider-container">
+            <div class="slider-container" id="slider">
                 <label for="orbitSlider">ORBIT</label>
                 <input type="range" id="orbitSlider" min="0" max="1000" step="1" value="0" />
 <BR>
                 <label for="nucleusSlider">NUCLEUS</label>
                 <input type="range" id="nucleusSlider" min="0" max="1000" step="1" value="0" />
             </div>
+  
+
         </section>
 
         <section class="section" style="background-color: #000000;">
@@ -457,6 +479,62 @@
     </div>
 
     <script>
+
+ // Automatic animation for #particles-word element
+    const particlesWord = document.getElementById('particles-word');
+    let posiDirection = 1;
+    let shapDirection = 1;
+    let posiValue = 0;
+    let shapValue = 0;
+
+    function animateParticlesWord() {
+        // Update POSI and SHAP values
+        posiValue += posiDirection * 10;
+        shapValue += shapDirection * 10;
+
+         // Ensure POSI and SHAP values are within the 0 to 1000 range
+        if (posiValue > 1000) {
+            posiValue = 1000;
+            posiDirection = -1;
+        } else if (posiValue < 0) {
+            posiValue = 0;
+            posiDirection = 1;
+        }
+
+        if (shapValue > 1000) {
+            shapValue = 1000;
+            shapDirection = -1;
+        } else if (shapValue < 0) {
+            shapValue = 0;
+            shapDirection = 1;
+        }
+
+        // Set the font-variation-settings property
+        particlesWord.style.fontVariationSettings = `"POSI" ${posiValue}, "SHAP" ${shapValue}`;
+
+        // Update color based on POSI value using a color palette similar to the electrons
+        switch (Math.floor((posiValue / 1000) * 4) % 4) {
+            case 0:
+                particlesWord.style.color = "#FF5733"; // Red-Orange
+                break;
+            case 1:
+                particlesWord.style.color = "#FF33A8"; // Pink
+                break;
+            case 2:
+                particlesWord.style.color = "#A3FF33"; // Light Green
+                break;
+            case 3:
+                particlesWord.style.color = "#33FF57"; // Green
+                break;
+        }
+
+        // Continue the animation loop
+        requestAnimationFrame(animateParticlesWord);
+    }
+
+    // Start the animation
+    animateParticlesWord();
+
     // Create the custom cursor element
     let cursor = document.createElement('div');
     cursor.classList.add('cursor');
