@@ -399,10 +399,10 @@
 
  #particles-word {
             font-family: 'Particles', sans-serif;
-            font-size: 15rem;
-            font-weight: bold;
-            text-transform: uppercase;
+            font-size: 7rem;
             color: #FF5733;
+	 padding:100px;
+	 line-height:60px;
         }
     </style>
 </head>
@@ -442,9 +442,13 @@
         </section>
 
 <section class="section" style="background-color: black;">
-<div id="particles-word">*</div>
+<div id="particles-word">R+I+S+D=[2025]</div>
 
           <div class="floater" style="top: 500px; left: 50px;"> This immersive experience allows users to engage with typography that abstracts scientific principles through interactive visualizations.   </div>
+
+ <div class="floater" style="top: 700px; left: 800px;">
+Driven by a systematic approach to depth, complexity, and generative methods, Quantum Type Lab strives to merge scientific rigor with artistic expression. </div>
+
 		</section>
 
         <section class="sectiontwo" style="background-color: black;">
@@ -502,8 +506,8 @@
 
     function animateParticlesWord() {
         // Update POSI and SHAP values
-        posiValue += posiDirection * 10;
-        shapValue += shapDirection * 10;
+        posiValue += posiDirection * 1;
+        shapValue += shapDirection * 1;
 
          // Ensure POSI and SHAP values are within the 0 to 1000 range
         if (posiValue > 1000) {
