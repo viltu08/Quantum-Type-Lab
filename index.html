@@ -424,6 +424,44 @@ font-family: 'Particles', sans-serif;
 			height: 50vh;
 mix-blend-mode: exclusion;
 }
+		/* The section with vertical window to showcase Atomic typeface */
+.showcase-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    overflow-x: hidden;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: transparent;
+}
+
+		
+	.showcase-content {
+    font-family: 'Atomic', sans-serif;
+    font-size: 300px;
+    color: white;
+    text-align: center;
+    align-content: center;
+    transform: scale(1);
+    position: relative;
+    font-variation-settings: 'ORBT' 0, 'NCLS' 0;
+    transition: color 3s ease-out, transform 4s ease-out, font-variation-settings 4s ease-out;
+}
+
+.showcase-content:hover {
+    color: #FFFF00;
+    transform: scale(1.1);
+    font-variation-settings: 'ORBT' 1000, 'NCLS' 1000;
+    z-index: 10;
+}
+		
+        .showcase-content:not(:hover) {
+            transition: transform 4s ease-out, color 4s ease-out;
+        }
+		
     </style>
 </head>
 
@@ -517,7 +555,17 @@ Driven by a systematic approach to depth, complexity, and generative methods, Qu
 			</h1>
 		</section>
         <section class="section" style="background-color: #000000;">
- 
+ <div class="showcase-container">
+	 <div class= "showcase-content">
+		 <p>
+			 A<br> B<br> C<br> D<br> E<br> F<br> G<br> H<br> I<br> J<br> K<br> L<br> M<br> N<br> O<br> P<br> Q<br> R<br> S<br> T<br> U<br> V<br> W<br> X<br> Y<br> Z
+		 </p>
+		 
+		 
+ <div class="floater" style="top: 600px; left: 800px;">
+Driven by a systematic approach to depth, complexity, and generative methods, Quantum Type Lab strives to merge scientific rigor with artistic expression. </div>
+	 </div>
+			</div>
         </section>
     </div>
 
