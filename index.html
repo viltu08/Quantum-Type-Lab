@@ -28,6 +28,14 @@
             font-stretch: 75% 125%;
         }
 
+		        /* General container layout which is flex to contain he whole site */
+        .container {
+            display: flex;
+            height: 100vh;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+		
  /* Basic body template with black background and no vertical scrolling. Cursor is none to activate custom cursor */
 
         body,
@@ -119,7 +127,7 @@
             transition: transform 4s ease-out, color 4s ease-out;
         }
         
-/* When PARTCILES typeface is used above ATOMIC typebox where users can type in*/
+/* When PARTICLES typeface is used above ATOMIC typebox where users can type in*/
 
               .particles .chartwo {
             display: flex;
@@ -140,13 +148,7 @@
             transition: transform 4s ease-out, color 4s ease-out;
         }
 
-        /* General container layout which is flex to contain he whole site */
-        .container {
-            display: flex;
-            height: 100vh;
-            overflow-x: scroll;
-            overflow-y: hidden;
-        }
+
 /* Sections treated as one screen at a time with flex view */
 
         .section {
@@ -335,7 +337,7 @@
             text-align: center;
         }
 
-        /* Sliders for font axes to manimupate the written type */
+        /* Sliders for font axes to manipulate the written type */
         .slider-container {
             display: flex;
             flex-direction: column;
@@ -427,24 +429,36 @@ mix-blend-mode: exclusion;
 		/* The section with vertical window to showcase Atomic typeface */
 .showcase-container {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     overflow-x: hidden;
-    padding: 20px;
+    padding: 25px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     background-color: transparent;
+    animation: pulsate-border 0.5s infinite alternate;
+    box-shadow: 0 0 15px rgba(77, 77, 255, 0.7);
 }
 
+/* Keyframes for the pulsating border */
+@keyframes pulsate-border {
+    0% {
+        box-shadow: 0 0 15px rgba(77, 77, 255, 0.7), 0 0 30px rgba(77, 77, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 250px rgba(77, 77, 255, 1), 0 0 50px rgba(163, 255, 51, 0.8);
+    }
+}
 		
 	.showcase-content {
     font-family: 'Atomic', sans-serif;
     font-size: 300px;
+	line-height: 1;
     color: white;
     text-align: center;
-    align-content: center;
+   justify-content: center;
     transform: scale(1);
     position: relative;
     font-variation-settings: 'ORBT' 0, 'NCLS' 0;
@@ -547,10 +561,13 @@ Driven by a systematic approach to depth, complexity, and generative methods, Qu
 
         <section class="section" style="background-color: #000000;">
   <h1 class="particles">
+	   <div class="floater" style="top: 600px; left: 200px;">
+ This interplay creates a space where typography and scientific principles coexist and converge, providing a visual and interactive platform for exploring these concepts.</div>
 <div class="transparent-outlined-text">
 <span class="char">
 	ELECTRONS
 	</span>
+	
 			</div>
 			</h1>
 		</section>
@@ -561,9 +578,7 @@ Driven by a systematic approach to depth, complexity, and generative methods, Qu
 			 A<br> B<br> C<br> D<br> E<br> F<br> G<br> H<br> I<br> J<br> K<br> L<br> M<br> N<br> O<br> P<br> Q<br> R<br> S<br> T<br> U<br> V<br> W<br> X<br> Y<br> Z
 		 </p>
 		 
-		 
- <div class="floater" style="top: 600px; left: 800px;">
-Driven by a systematic approach to depth, complexity, and generative methods, Quantum Type Lab strives to merge scientific rigor with artistic expression. </div>
+
 	 </div>
 			</div>
         </section>
