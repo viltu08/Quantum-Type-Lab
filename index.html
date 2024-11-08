@@ -29,23 +29,26 @@
         }
 
 		        /* General container layout which is flex to contain he whole site */
-        .container {
+      .container {
             display: flex;
-            height: 100vh;
-            overflow-x: scroll;
+            flex-direction: row;
+            height: auto;
             overflow-y: hidden;
         }
+
 		
  /* Basic body template with black background and no vertical scrolling. Cursor is none to activate custom cursor */
 
-        body,
+      body,
         html {
             background-color: black;
+            overflow-x: scroll;
             overflow-y: hidden;
             height: 100vh;
-            width: 100vw;
+            width: auto;
             cursor: none;
             scroll-behavior: smooth;
+			scrollbar-width: none;
         }
 
         /* Different heading styles */
@@ -77,6 +80,35 @@
             line-height: 100px;
         }
 
+		/* Sections treated as one screen at a time with flex view */
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            min-width: 100vw;
+            align-items: center;
+            font-size: 20px;
+            padding: 200px;
+			text-align: center;
+			position: relative;
+        }
+
+        .sectionthree {
+            display: flex;
+            flex-direction: column;
+            min-width: 100vw;
+            align-items: center;
+            font-size: 10px;
+            padding: 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        ::selection {
+            background-color: yellow;
+            color: black;
+        }
+		
 /* the floating project description boxes. Position is absolute here and flex in sections so that they move with the page when scrolled */
 
     .floater {
@@ -149,154 +181,7 @@
         }
 
 
-/* Sections treated as one screen at a time with flex view */
-
-        .section {
-            display: flex;
-            flex-direction: column;
-            min-width: 100vw;
-            align-items: center;
-            font-size: 2rem;
-            padding: 10rem;
-			position: relative;
-        }
-
-		.sectiontwo {
-			padding: 0px;
-		}
-
-        .sectionthree {
-            display: flex;
-            flex-direction: column;
-            min-width: 100vw;
-            align-items: center;
-            font-size: 1rem;
-            padding: 5rem;
-            text-align: center;
-            position: relative;
-        }
-
-        /* Styling for Scrollbar */
-        ::-webkit-scrollbar {
-            width: 25px;
-            height: 25px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        ::-webkit-scrollbar-thumb:horizontal {
-            background: linear-gradient(to right, #FF5733, #FF33A8, #A3FF33, #33FF57);
-            border-radius: 10px;
-            border: 1px solid white;
-        }
-
-        /* Grabbable scrollbar styling */
-        ::-webkit-scrollbar-thumb {
-            cursor: none;
-        }
-
-        ::-webkit-scrollbar-thumb:active {
-            cursor: grabbing;
-        }
-
-
-        ::selection {
-            background-color: yellow;
-            color: black;
-        }
-
-        /* Custom Cursor */
-        .cursor {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: yellow;
-            pointer-events: none;
-            mix-blend-mode: difference;
-            position: absolute;
-            z-index: 1000;
-        }
-
-        /* Cursor trail */
-        .trail {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: yellow;
-            position: absolute;
-            pointer-events: none;
-            opacity: 0.5;
-            z-index: 999;
-            animation: fadeOut 0.5s ease-out forwards;
-        }
-
-        @keyframes fadeOut {
-            0% {
-                opacity: 0.5;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        /* Electrons which are spread all over the website */
-        .electron {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            position: absolute;
-            animation: floatElectron 10s linear infinite;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-            z-index: 998;
-        }
-
-        .electron:nth-child(4n+1) {
-            background: linear-gradient(135deg, #FF5733, #FF8D1A);
-        }
-
-        .electron:nth-child(4n+2) {
-            background: linear-gradient(135deg, #FF33A8, #FF66B2);
-        }
-
-        .electron:nth-child(4n+3) {
-            background: linear-gradient(135deg, #A3FF33, #C4FF57);
-        }
-
-        .electron:nth-child(4n) {
-            background: linear-gradient(135deg, #33FF57, #66FF8A);
-        }
-
-        @keyframes floatElectron {
-            0% {
-                transform: translateY(0) translateX(0);
-                opacity: 1;
-            }
-
-            25% {
-                transform: translateY(-20px) translateX(10px);
-                opacity: 0.8;
-            }
-
-            50% {
-                transform: translateY(20px) translateX(-10px);
-                opacity: 0.6;
-            }
-
-            75% {
-                transform: translateY(-20px) translateX(20px);
-                opacity: 0.8;
-            }
-
-            100% {
-                transform: translateY(0) translateX(0);
-                opacity: 1;
-            }
-        }
-
-        /* Text input where users type with gradient outline */
+  /* Text input where users type with gradient outline */
         .text-box-wrapper {
             padding: 5px;
             border-radius: 15px;
@@ -419,11 +304,11 @@
     -webkit-text-stroke: 2px #FF5733;
 font-family: 'Particles', sans-serif;
 			letter-spacing: 5px;
-			display: flex;
 			align-items: center;
 			justify-content: center;
 			flex-direction: column;
 			height: 50vh;
+			padding: 100px;
 mix-blend-mode: exclusion;
 }
 		/* The section with vertical window to showcase Atomic typeface */
@@ -438,8 +323,9 @@ mix-blend-mode: exclusion;
     align-items: flex-start;
     justify-content: center;
     background-color: transparent;
-    animation: pulsate-border 0.5s infinite alternate;
+    animation: pulsate-border 1s infinite alternate;
     box-shadow: 0 0 15px rgba(77, 77, 255, 0.7);
+	scrollbar-width: none;
 }
 
 /* Keyframes for the pulsating border */
@@ -476,13 +362,103 @@ mix-blend-mode: exclusion;
             transition: transform 4s ease-out, color 4s ease-out;
         }
 		
+
+        /* Custom Cursor */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: yellow;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            position: absolute;
+            z-index: 1000;
+        }
+
+        /* Cursor trail */
+        .trail {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: yellow;
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.5;
+            z-index: 999;
+            animation: fadeOut 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Electrons which are spread all over the website */
+        .electron {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            position: absolute;
+            animation: floatElectron 10s linear infinite;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+            z-index: 998;
+        }
+
+        .electron:nth-child(4n+1) {
+            background: linear-gradient(135deg, #FF5733, #FF8D1A);
+        }
+
+        .electron:nth-child(4n+2) {
+            background: linear-gradient(135deg, #FF33A8, #FF66B2);
+        }
+
+        .electron:nth-child(4n+3) {
+            background: linear-gradient(135deg, #A3FF33, #C4FF57);
+        }
+
+        .electron:nth-child(4n) {
+            background: linear-gradient(135deg, #33FF57, #66FF8A);
+        }
+
+        @keyframes floatElectron {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+
+            25% {
+                transform: translateY(-20px) translateX(10px);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translateY(20px) translateX(-10px);
+                opacity: 0.6;
+            }
+
+            75% {
+                transform: translateY(-20px) translateX(20px);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+        }
+
+      
     </style>
 </head>
 
 <body>
     <div class="container">
-
-        <section class="section" style="background-color: black;">
+        <div class="section">
             <h1 class="particles">
                 <div class="line">
                     <span class="char">Q</span>
@@ -511,9 +487,9 @@ mix-blend-mode: exclusion;
 <div class="floater" style="top: 400px; left: 1000px;">This project treats typography as a mutable entity—one that, like atoms, can exist in different states: ground, excited, ionized or nuclear. </div>
 			
 		<div class="floater" style="top: 650px; left: 900px;">	Typography here is not static; it mutates, transforming from one form to another and embodying the fluidity of both waves and particles as in quantum theory. </div>
-        </section>
+        </div>
 
-<section class="section" style="background-color: black;">
+<div class="section">
 
 	<div id="atomic-word">.-.-.-.-.<br>.-.-.-.-.-.<br>.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.<br>.-.-.-.-.-.<br>.-.-.-.-.</div>
           <div class="floater" style="top: 550px; left: 50px;"> This immersive experience allows users to engage with typography that abstracts scientific principles through interactive visualizations.   </div>
@@ -522,9 +498,9 @@ mix-blend-mode: exclusion;
  <div class="floater" style="top: 600px; left: 800px;">
 Driven by a systematic approach to depth, complexity, and generative methods, Quantum Type Lab strives to merge scientific rigor with artistic expression. </div>
 
-		</section>
+		</div>
 
-        <section class="sectionthree" style="background-color: black;">
+        <div class="sectionthree" style="background-color: black;">
             <h1 CLASS="particles">
                 <div class="line">
                     <span class="chartwo">A</span>
@@ -557,9 +533,9 @@ Driven by a systematic approach to depth, complexity, and generative methods, Qu
                 <label for="nucleusSlider">NUCLEUS</label>
                 <input type="range" id="nucleusSlider" min="0" max="1000" step="1" value="0" />
 			</div>
-        </section>
+        </div>
 
-        <section class="section" style="background-color: #000000;">
+        <div class="section">
   <h1 class="particles">
 	   <div class="floater" style="top: 600px; left: 200px;">
  This interplay creates a space where typography and scientific principles coexist and converge, providing a visual and interactive platform for exploring these concepts.</div>
@@ -570,8 +546,8 @@ Driven by a systematic approach to depth, complexity, and generative methods, Qu
 	
 			</div>
 			</h1>
-		</section>
-        <section class="section" style="background-color: #000000;">
+		</div>
+        <div class="section" style="background-color: #000000;">
  <div class="showcase-container">
 	 <div class= "showcase-content">
 		 <p>
@@ -581,7 +557,7 @@ Driven by a systematic approach to depth, complexity, and generative methods, Qu
 
 	 </div>
 			</div>
-        </section>
+        </div>
     </div>
 
     <script>
@@ -646,9 +622,6 @@ Driven by a systematic approach to depth, complexity, and generative methods, Qu
     cursor.classList.add('cursor');
     document.body.appendChild(cursor);
 
-    // Track if the scrollbar is being dragged
-    let isDraggingScrollbar = false;
-
     // Track mouse movements for custom cursor positioning
     document.addEventListener('mousemove', (e) => {
         // Update cursor position even if scrollbar is dragged
@@ -667,28 +640,6 @@ Driven by a systematic approach to depth, complexity, and generative methods, Qu
         }, 500);
     });
 
-    // Detect when the user clicks to drag the scrollbar
-    const container = document.querySelector('.container');
-    container.addEventListener('mousedown', (e) => {
-        if (e.target === container) {
-            isDraggingScrollbar = true;
-            cursor.style.cursor = "grabbing"; // Optional: change cursor style
-        }
-    });
-
-    // Stop drag state when mouse is released
-    document.addEventListener('mouseup', () => {
-        isDraggingScrollbar = false;
-        cursor.style.cursor = "none"; // Optional: revert cursor style
-    });
-
-    // Ensure cursor follows even while dragging
-    container.addEventListener('scroll', () => {
-        if (isDraggingScrollbar) {
-            // This will force the cursor to update position continuously
-            cursor.style.left = `${container.scrollLeft + 20}px`;
-        }
-    });
 
     // Particles font variation on hover with smooth transitions
     document.querySelectorAll('.particles .char').forEach(char => {
