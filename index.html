@@ -452,6 +452,64 @@ mix-blend-mode: exclusion;
             }
         }
 
+	@media (max-width: 768px) {
+    /* Change container layout to column for vertical scrolling */
+    .container {
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll;
+    }
+		
+		body, html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+		
+		h1, h2 {
+			font-size: 100px;
+		}
+
+    /* Update sections to align everything centrally */
+    .section, .sectionthree {
+        min-width: 100vw;
+        padding: 50px 20px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Center floaters and adjust their positioning */
+    .floater {
+        position: static;
+        margin: 20px auto;
+        width: 80%;
+		 align-items: center;
+        justify-content: center;
+    }
+
+    /* Adjust text-box wrapper for smaller width */
+    .text-box-wrapper {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    /* Adjust showcase container for centering and smaller devices */
+    .showcase-container {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        box-shadow: none;
+    }
+
+    .showcase-content {
+        font-size: 200px;
+    }
+}
+
+		#atomic-word {
+font-size: 150px;
+			margin: 10px;
+}
       
     </style>
 </head>
