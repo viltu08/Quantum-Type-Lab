@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quantum Type Lab</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-       
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
- /* Import variable typefaces ATOMIC and PARTICLES */
+
+        /* Import variable typefaces ATOMIC and PARTICLES */
         @font-face {
             font-family: 'Atomic';
             src: url('https://raw.githubusercontent.com/viltu08/Quantum-Type-Lab/b2e3c08753d63cf111a7de564f4398bc28aae64d/AtomicVF.woff2') format('woff2');
@@ -28,18 +28,18 @@
             font-stretch: 75% 125%;
         }
 
-		        /* General container layout which is flex to contain he whole site */
-      .container {
+        /* General container layout which is flex to contain he whole site */
+        .container {
             display: flex;
             flex-direction: row;
             height: auto;
             overflow-y: hidden;
         }
 
-		
- /* Basic body template with black background and no vertical scrolling. Cursor is none to activate custom cursor */
 
-      body,
+        /* Basic body template with black background and no vertical scrolling. Cursor is none to activate custom cursor */
+
+        body,
         html {
             background-color: black;
             overflow-x: scroll;
@@ -48,7 +48,7 @@
             width: auto;
             cursor: none;
             scroll-behavior: smooth;
-			scrollbar-width: none;
+            scrollbar-width: none;
         }
 
         /* Different heading styles */
@@ -80,7 +80,7 @@
             line-height: 100px;
         }
 
-		/* Sections treated as one screen at a time with flex view */
+        /* Sections treated as one screen at a time with flex view */
 
         .section {
             display: flex;
@@ -89,8 +89,8 @@
             align-items: center;
             font-size: 20px;
             padding: 200px;
-			text-align: center;
-			position: relative;
+            text-align: center;
+            position: relative;
         }
 
         .sectionthree {
@@ -104,14 +104,16 @@
             position: relative;
         }
 
+        /* How selection works for text*/
+
         ::selection {
             background-color: yellow;
             color: black;
         }
-		
-/* the floating project description boxes. Position is absolute here and flex in sections so that they move with the page when scrolled */
 
-    .floater {
+        /* the floating project description boxes. Position is absolute here and flex in sections so that they move with the page when scrolled */
+
+        .floater {
             position: absolute;
             padding: 20px;
             border: 1px solid yellow;
@@ -121,9 +123,9 @@
             color: #4D4DFF;
             transition: border-color 0.3s, color 0.3s;
             font-family: 'Space Mono', monospace;
-		font-size: 15px;
-		width: 30%;
-        text-align: left;
+            font-size: 15px;
+            width: 30%;
+            text-align: left;
         }
 
         .floater:hover {
@@ -158,10 +160,10 @@
         .particles .char:not(:hover) {
             transition: transform 4s ease-out, color 4s ease-out;
         }
-        
-/* When PARTICLES typeface is used above ATOMIC typebox where users can type in*/
 
-              .particles .chartwo {
+        /* When PARTICLES typeface is used above ATOMIC typebox where users can type in*/
+
+        .particles .chartwo {
             display: flex;
             color: #4D4DFF;
             transform: scale(1);
@@ -181,7 +183,7 @@
         }
 
 
-  /* Text input where users type with gradient outline */
+        /* Text input where users type with gradient outline */
         .text-box-wrapper {
             padding: 5px;
             border-radius: 15px;
@@ -190,8 +192,8 @@
             animation: gradientAnimation 4s ease infinite;
             width: 80%;
             margin-top: 20px;
-			border: 5px solid transparent;
-    background-clip: padding-box;
+            border: 5px solid transparent;
+            background-clip: padding-box;
         }
 
         @keyframes gradientAnimation {
@@ -266,7 +268,7 @@
             cursor: pointer;
             box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
         }
-        
+
         #playPauseButton {
             background: #4D4DFF;
             border: none;
@@ -279,89 +281,92 @@
         #slider {
             padding: 20px;
         }
-/* Play button */
+
+        /* Play button */
         svg {
             width: 30px;
             height: 30px;
             fill: #FF5733;
         }
 
-/* The second section where there are auto-animated glyphs */
+        /* The second section where there are auto-animated glyphs */
 
- #atomic-word {
+        #atomic-word {
             font-family: 'Atomic', sans-serif;
             font-size: 300px;
             color: #FF5733;
-	 line-height:30px;
-	 text-align: center;
+            line-height: 30px;
+            text-align: center;
         }
-		
-/* For creating a new style in existing typeface without using a new master in glyphs */
 
-		.transparent-outlined-text {
-    font-size: 100px;
-    color: transparent;
-    -webkit-text-stroke: 2px #FF5733;
-font-family: 'Particles', sans-serif;
-			letter-spacing: 5px;
-			align-items: center;
-			justify-content: center;
-			flex-direction: column;
-			height: 50vh;
-			padding: 100px;
-mix-blend-mode: exclusion;
-}
-		/* The section with vertical window to showcase Atomic typeface */
-.showcase-container {
-    position: relative;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    overflow-x: hidden;
-    padding: 25px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: transparent;
-    animation: pulsate-border 1s infinite alternate;
-    box-shadow: 0 0 15px rgba(77, 77, 255, 0.7);
-	scrollbar-width: none;
-}
+        /* For creating a new style in existing typeface without using a new master in glyphs */
 
-/* Keyframes for the pulsating border */
-@keyframes pulsate-border {
-    0% {
-        box-shadow: 0 0 15px rgba(77, 77, 255, 0.7), 0 0 30px rgba(77, 77, 255, 0.5);
-    }
-    100% {
-        box-shadow: 0 0 250px rgba(77, 77, 255, 1), 0 0 50px rgba(163, 255, 51, 0.8);
-    }
-}
-		
-	.showcase-content {
-    font-family: 'Atomic', sans-serif;
-    font-size: 300px;
-	line-height: 1;
-    color: white;
-    text-align: center;
-   justify-content: center;
-    transform: scale(1);
-    position: relative;
-    font-variation-settings: 'ORBT' 0, 'NCLS' 0;
-    transition: color 3s ease-out, transform 4s ease-out, font-variation-settings 4s ease-out;
-}
+        .transparent-outlined-text {
+            font-size: 100px;
+            color: transparent;
+            -webkit-text-stroke: 2px #FF5733;
+            font-family: 'Particles', sans-serif;
+            letter-spacing: 5px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 50vh;
+            padding: 100px;
+            mix-blend-mode: exclusion;
+        }
 
-.showcase-content:hover {
-    color: #FFFF00;
-    transform: scale(1.1);
-    font-variation-settings: 'ORBT' 1000, 'NCLS' 1000;
-    z-index: 10;
-}
-		
+        /* The section with vertical window to showcase Atomic typeface */
+        .showcase-container {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            overflow-x: hidden;
+            padding: 25px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            background-color: transparent;
+            animation: pulsate-border 1s infinite alternate;
+            box-shadow: 0 0 15px rgba(77, 77, 255, 0.7);
+            scrollbar-width: none;
+        }
+
+        /* Keyframes for the pulsating border */
+        @keyframes pulsate-border {
+            0% {
+                box-shadow: 0 0 15px rgba(77, 77, 255, 0.7), 0 0 30px rgba(77, 77, 255, 0.5);
+            }
+
+            100% {
+                box-shadow: 0 0 250px rgba(77, 77, 255, 1), 0 0 50px rgba(163, 255, 51, 0.8);
+            }
+        }
+
+        .showcase-content {
+            font-family: 'Atomic', sans-serif;
+            font-size: 300px;
+            line-height: 1;
+            color: white;
+            text-align: center;
+            justify-content: center;
+            transform: scale(1);
+            position: relative;
+            font-variation-settings: 'ORBT' 0, 'NCLS' 0;
+            transition: color 3s ease-out, transform 4s ease-out, font-variation-settings 4s ease-out;
+        }
+
+        .showcase-content:hover {
+            color: #FFFF00;
+            transform: scale(1.1);
+            font-variation-settings: 'ORBT' 1000, 'NCLS' 1000;
+            z-index: 10;
+        }
+
         .showcase-content:not(:hover) {
             transition: transform 4s ease-out, color 4s ease-out;
         }
-		
+
 
         /* Custom Cursor */
         .cursor {
@@ -400,7 +405,7 @@ mix-blend-mode: exclusion;
 
         /* Electrons which are spread all over the website */
         .electron {
-            width:6px;
+            width: 6px;
             height: 6px;
             border-radius: 50%;
             position: absolute;
@@ -452,65 +457,191 @@ mix-blend-mode: exclusion;
             }
         }
 
-	@media (max-width: 768px) {
-    /* Change container layout to column for vertical scrolling */
-    .container {
-        flex-direction: column;
-        align-items: center;
-        overflow-y: scroll;
-    }
-		
-		body, html {
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-		
-		h1, h2 {
-			font-size: 100px;
-		}
+        /*Media queries*/
 
-    /* Update sections to align everything centrally */
-    .section, .sectionthree {
-        min-width: 100vw;
-        padding: 50px 20px;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-    }
+        @media (max-width: 768px) {
 
-    /* Center floaters and adjust their positioning */
-    .floater {
-        position: static;
-        margin: 20px auto;
-        width: 80%;
-		 align-items: center;
-        justify-content: center;
-    }
+            /* Change container layout to column for vertical scrolling */
+            .container {
+                flex-direction: column;
+                align-items: center;
+                overflow-y: scroll;
+            }
 
-    /* Adjust text-box wrapper for smaller width */
-    .text-box-wrapper {
-        width: 95%;
-        margin: 20px auto;
-    }
+            body,
+            html {
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
 
-    /* Adjust showcase container for centering and smaller devices */
-    .showcase-container {
-        width: 100%;
-        height: auto;
-        padding: 15px;
-        box-shadow: none;
-    }
+            h1,
+            h2 {
+                font-size: 80px;
+            }
 
-    .showcase-content {
-        font-size: 200px;
-    }
-}
+            .section,
+            .sectionthree {
+                min-width: 100vw;
+                padding: 50px 20px;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+            }
 
-		#atomic-word {
-font-size: 150px;
-			margin: 10px;
-}
-      
+            .floater {
+                position: static;
+                margin: 20px auto;
+                width: 90%;
+                align-items: center;
+                justify-content: center;
+            }
+
+
+            .text-box-wrapper {
+                width: 90%;
+                margin: 20px auto;
+            }
+
+            .showcase-container {
+                width: 100%;
+                height: auto;
+                padding: 15px;
+                box-shadow: none;
+            }
+
+            .showcase-content {
+                font-size: 180px;
+            }
+
+            .transparent-outlined-text {
+                font-size: 70px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+                overflow-y: scroll;
+            }
+
+            body,
+            html {
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
+
+            h1,
+            h2 {
+                font-size: 50px;
+            }
+
+
+            .section,
+            .sectionthree {
+                min-width: 100vw;
+                padding: 30px 15px;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .floater {
+                position: static;
+                margin: 15px auto;
+                width: 85%;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .text-box-wrapper {
+                width: 85%;
+                margin: 15px auto;
+            }
+
+            .showcase-container {
+                width: 90%;
+                height: auto;
+                padding: 10px;
+                box-shadow: none;
+            }
+
+            .showcase-content {
+                font-size: 140px;
+            }
+
+            #atomic-word {
+                font-size: 50px;
+                margin: 5px;
+            }
+
+            .transparent-outlined-text {
+                font-size: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+                overflow-y: scroll;
+            }
+
+            body,
+            html {
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
+
+            h1,
+            h2 {
+                font-size: 40px;
+            }
+
+            .section,
+            .sectionthree {
+                min-width: 100vw;
+                padding: 20px 10px;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .floater {
+                position: static;
+                margin: 10px auto;
+                width: 95%;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .text-box-wrapper {
+                width: 95%;
+                margin: 10px auto;
+            }
+
+            .showcase-container {
+                width: 85%;
+                height: auto;
+                padding: 5px;
+                box-shadow: none;
+            }
+
+            .showcase-content {
+                font-size: 100px;
+            }
+
+            #atomic-word {
+                font-size: 40px;
+                margin: 2px;
+            }
+
+            .transparent-outlined-text {
+                font-size: 40px;
+            }
+        }
     </style>
 </head>
 
@@ -540,23 +671,32 @@ font-size: 150px;
                 </div>
             </h1>
 
-			<div class="floater" style="top: 500px; left: 50px;">Quantum Type Lab is a digital gallery for experimental typography inspired by my scientific curiosities, exploring intersections of atomic structures, elemental periodicity, and the transformative potential of variable typefaces.</div>
+            <div class="floater" style="top: 500px; left: 50px;">Quantum Type Lab is a digital gallery for experimental
+                typography inspired by my scientific curiosities, exploring intersections of atomic structures,
+                elemental periodicity, and the transformative potential of variable typefaces.</div>
 
-<div class="floater" style="top: 400px; left: 1000px;">This project treats typography as a mutable entity—one that, like atoms, can exist in different states: ground, excited, ionized or nuclear. </div>
-			
-		<div class="floater" style="top: 650px; left: 900px;">	Typography here is not static; it mutates, transforming from one form to another and embodying the fluidity of both waves and particles as in quantum theory. </div>
+            <div class="floater" style="top: 400px; left: 1000px;">This project treats typography as a mutable
+                entity—one that, like atoms, can exist in different states: ground, excited, ionized or nuclear. </div>
+
+            <div class="floater" style="top: 650px; left: 900px;"> Typography here is not static; it mutates,
+                transforming from one form to another and embodying the fluidity of both waves and particles as in
+                quantum theory. </div>
         </div>
 
-<div class="section">
+        <div class="section">
 
-	<div id="atomic-word">.-.-.-.-.<br>.-.-.-.-.-.<br>.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.<br>.-.-.-.-.-.<br>.-.-.-.-.</div>
-          <div class="floater" style="top: 550px; left: 50px;"> This immersive experience allows users to engage with typography that abstracts scientific principles through interactive visualizations.   </div>
+            <div id="atomic-word">
+                .-.-.-.-.<br>.-.-.-.-.-.<br>.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.<br>.-.-.-.-.-.<br>.-.-.-.-.
+            </div>
+            <div class="floater" style="top: 550px; left: 50px;"> This immersive experience allows users to engage with
+                typography that abstracts scientific principles through interactive visualizations. </div>
 
 
- <div class="floater" style="top: 600px; left: 800px;">
-Driven by a systematic approach to depth, complexity, and generative methods, Quantum Type Lab strives to merge scientific rigor with artistic expression. </div>
+            <div class="floater" style="top: 600px; left: 800px;">
+                Driven by a systematic approach to depth, complexity, and generative methods, Quantum Type Lab strives
+                to merge scientific rigor with artistic expression. </div>
 
-		</div>
+        </div>
 
         <div class="sectionthree" style="background-color: black;">
             <h1 CLASS="particles">
@@ -575,264 +715,269 @@ Driven by a systematic approach to depth, complexity, and generative methods, Qu
             <div class="text-box-wrapper">
                 <textarea class="text-box" placeholder="TYPE HERE..."></textarea>
             </div>
-<BR>
-           <!-- Play/Pause Button -->
-          <button id="playPauseButton">
-            <svg id="playIcon" viewBox="0 0 24 24">
-              <polygon id="playIconPolygon" points="5,3 19,12 5,21" />
-            </svg>
-          </button>
+            <BR>
+            <!-- Play/Pause Button -->
+            <button id="playPauseButton">
+                <svg id="playIcon" viewBox="0 0 24 24">
+                    <polygon id="playIconPolygon" points="5,3 19,12 5,21" />
+                </svg>
+            </button>
 
             <!-- Sliders for font axes control -->
             <div class="slider-container" id="slider">
                 <label for="orbitSlider">ORBIT</label>
                 <input type="range" id="orbitSlider" min="0" max="1000" step="1" value="0" />
-<BR>
+                <BR>
                 <label for="nucleusSlider">NUCLEUS</label>
                 <input type="range" id="nucleusSlider" min="0" max="1000" step="1" value="0" />
-			</div>
+            </div>
         </div>
 
         <div class="section">
-  <h1 class="particles">
-	   <div class="floater" style="top: 600px; left: 200px;">
- This interplay creates a space where typography and scientific principles coexist and converge, providing a visual and interactive platform for exploring these concepts.</div>
-<div class="floater" style="top: 100px; left: 800px;">
-	  The variety of colors, textures, and forms drawn from scientific visualization inspire new typographic "worlds," each one cataloged in a visually enriching and playful way.</div>
-	  
-	  <div class="transparent-outlined-text">
-<span class="char">
-	ELECTRONS
-	</span>
-	
-			</div>
-			</h1>
-		</div>
-        <div class="section" style="background-color: #000000;">
-		<div class="floater" style="top: 100px; left: 900px;">	Quantum Type Lab uses science as a tool to expand our perception and understanding, bridging design aesthetics with scientific findings.</div>
-        <div class="floater" style="top: 600px; left: 100px;">	This amalgamation opens a world of unique possibilities of typographic behavior.</div>
- <div class="showcase-container">
-	 <div class= "showcase-content">
-		 <p>
-			 A<br> B<br> C<br> D<br> E<br> F<br> G<br> H<br> I<br> J<br> K<br> L<br> M<br> N<br> O<br> P<br> Q<br> R<br> S<br> T<br> U<br> V<br> W<br> X<br> Y<br> Z
-		 </p>
-		 
+            <h1 class="particles">
+                <div class="floater" style="top: 600px; left: 200px;">
+                    This interplay creates a space where typography and scientific principles coexist and converge,
+                    providing a visual and interactive platform for exploring these concepts.</div>
+                <div class="floater" style="top: 100px; left: 800px;">
+                    The variety of colors, textures, and forms drawn from scientific visualization inspire new
+                    typographic "worlds," each one cataloged in a visually enriching and playful way.</div>
 
-	 </div>
-			</div>
+                <div class="transparent-outlined-text">
+                    <span class="char">
+                        ELECTRONS
+                    </span>
+
+                </div>
+            </h1>
+        </div>
+        <div class="section" style="background-color: #000000;">
+            <div class="floater" style="top: 100px; left: 900px;"> Quantum Type Lab uses science as a tool to expand our
+                perception and understanding, bridging design aesthetics with scientific findings.</div>
+            <div class="floater" style="top: 600px; left: 100px;"> This amalgamation opens a world of unique
+                possibilities of typographic behavior.</div>
+            <div class="showcase-container">
+                <div class="showcase-content">
+                    <p>
+                        A<br> B<br> C<br> D<br> E<br> F<br> G<br> H<br> I<br> J<br> K<br> L<br> M<br> N<br> O<br> P<br>
+                        Q<br> R<br> S<br> T<br> U<br> V<br> W<br> X<br> Y<br> Z
+                    </p>
+
+
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
 
- // Automatic animation for #atomic-word element
-    const atomicWord = document.getElementById('atomic-word');
-    let orbtDirection = 1;
-    let nclsDirection = 1;
-    let orbtValue = 0;
-    let nclsValue = 0;
+        // Automatic animation for #atomic-word element
+        const atomicWord = document.getElementById('atomic-word');
+        let orbtDirection = 1;
+        let nclsDirection = 1;
+        let orbtValue = 0;
+        let nclsValue = 0;
 
-    function animateAtomicWord() {
-        // Update ORBT and NCLS values
-        orbtValue += orbtDirection * 1;
-        nclsValue += nclsDirection * 1;
+        function animateAtomicWord() {
+            // Update ORBT and NCLS values
+            orbtValue += orbtDirection * 1;
+            nclsValue += nclsDirection * 1;
 
-         // Ensure ORBT and NCLS values are within the 0 to 1000 range
-        if (orbtValue > 1000) {
-            orbtValue = 1000;
-            orbtDirection = -1;
-        } else if (orbtValue < 0) {
-            orbtValue = 0;
-            orbtDirection = 1;
-        }
-
-        if (nclsValue > 1000) {
-            nclsValue = 1000;
-            nclsDirection = -1;
-        } else if (nclsValue < 0) {
-            nclsValue = 0;
-            nclsDirection = 1;
-        }
-
-        // Set the font-variation-settings property
-        atomicWord.style.fontVariationSettings = `"ORBT" ${orbtValue}, "NCLS" ${nclsValue}`;
-
-        // Update color based on ORBT value using a color palette similar to the electrons
-        switch (Math.floor((orbtValue / 1000) * 4) % 4) {
-            case 0:
-                atomicWord.style.color = "#FF5733"; // Red-Orange
-                break;
-            case 1:
-                atomicWord.style.color = "#FF33A8"; // Pink
-                break;
-            case 2:
-                atomicWord.style.color = "#A3FF33"; // Light Green
-                break;
-            case 3:
-                atomicWord.style.color = "#33FF57"; // Green
-                break;
-        }
-
-        // Continue the animation loop
-        requestAnimationFrame(animateAtomicWord);
-    }
-
-    // Start the animation
-    animateAtomicWord();
-
-    // Create the custom cursor element
-    let cursor = document.createElement('div');
-    cursor.classList.add('cursor');
-    document.body.appendChild(cursor);
-
-    // Track mouse movements for custom cursor positioning
-    document.addEventListener('mousemove', (e) => {
-        // Update cursor position even if scrollbar is dragged
-        cursor.style.left = `${e.pageX - 10}px`;
-        cursor.style.top = `${e.pageY - 10}px`;
-
-        // Add a trailing effect
-        const trail = document.createElement('div');
-        trail.classList.add('trail');
-        trail.style.left = `${e.pageX - 10}px`;
-        trail.style.top = `${e.pageY - 10}px`;
-        document.body.appendChild(trail);
-
-        setTimeout(() => {
-            trail.remove();
-        }, 500);
-    });
-
-
-    // Particles font variation on hover with smooth transitions
-    document.querySelectorAll('.particles .char').forEach(char => {
-        char.addEventListener('mouseover', () => {
-            char.style.transition = "font-variation-settings 3s ease, color 3s ease, transform 4s ease";
-            char.style.fontVariationSettings = "'POSI' 1000, 'SHAP' 1000";
-            char.style.transform = "scale(4)";
-            char.style.color = "#FFFF00";
-            char.style.zIndex = "10";
-        });
-
-        char.addEventListener('mouseout', () => {
-            char.style.transition = "font-variation-settings 3s ease, color 3s ease, transform 4s ease";
-            char.style.fontVariationSettings = "'POSI' 0, 'SHAP' 0";
-            char.style.transform = "scale(1)";
-            char.style.color = "#4D4DFF";
-            char.style.zIndex = "";
-        });
-    });
-
-    // Particles font variation on hover with smooth transitions for .chartwo
-    document.querySelectorAll('.particles .chartwo').forEach(chartwo => {
-        chartwo.addEventListener('mouseover', () => {
-            chartwo.style.transition = "font-variation-settings 3s ease, color 3s ease, transform 4s ease";
-            chartwo.style.fontVariationSettings = "'POSI' 1000, 'SHAP' 1000";
-            chartwo.style.transform = "scale(2)";
-            chartwo.style.color = "#FFFF00";
-            chartwo.style.zIndex = "10";
-        });
-
-        chartwo.addEventListener('mouseout', () => {
-            chartwo.style.transition = "font-variation-settings 3s ease, color 3s ease, transform 4s ease";
-            chartwo.style.fontVariationSettings = "'POSI' 0, 'SHAP' 0";
-            chartwo.style.transform = "scale(1)";
-            chartwo.style.color = "#4D4DFF";
-            chartwo.style.zIndex = "";
-        });
-    });
-
-    // Generate electrons
-    for (let i = 0; i < 100; i++) {
-        const electron = document.createElement("div");
-        electron.classList.add("electron");
-        electron.style.top = `${Math.random() * 100}vh`;
-        electron.style.left = `${Math.random() * 100}vw`;
-        electron.style.animationDuration = `${10 + Math.random() * 5}s`;
-        document.body.appendChild(electron);
-    }
-
-    // Update Atomic font based on slider inputs
-    const orbitSlider = document.getElementById('orbitSlider');
-    const nucleusSlider = document.getElementById('nucleusSlider');
-    const textBox = document.querySelector('.text-box');
-
-    function updateFontVariation() {
-        const orbit = orbitSlider.value;
-        const nucleus = nucleusSlider.value;
-        textBox.style.fontVariationSettings = `"ORBT" ${orbit}, "NCLS" ${nucleus}`;
-    }
-
-    orbitSlider.addEventListener('input', updateFontVariation);
-    nucleusSlider.addEventListener('input', updateFontVariation);
-
-        
-    // Automatic Play Button Functionality
-    const playPauseButton = document.getElementById('playPauseButton');
-    const playIconPolygon = document.getElementById('playIconPolygon');
-    let isPlaying = false;
-    let intervalId;
-
-    // Direction variables to track if sliders are increasing or decreasing
-    let orbitDirection = 1; // 1 means increasing, -1 means decreasing
-    let nucleusDirection = 1;
-
-    function startAnimation() {
-        const orbitMin = parseInt(orbitSlider.min);
-        const orbitMax = parseInt(orbitSlider.max);
-        const nucleusMin = parseInt(nucleusSlider.min);
-        const nucleusMax = parseInt(nucleusSlider.max);
-
-        intervalId = setInterval(() => {
-            // Update orbit slider
-            let orbitValue = parseInt(orbitSlider.value);
-            orbitValue += orbitDirection;
-
-            if (orbitValue >= orbitMax) {
-                orbitValue = orbitMax;
-                orbitDirection = -1; // Change direction to decreasing
-            } else if (orbitValue <= orbitMin) {
-                orbitValue = orbitMin;
-                orbitDirection = 1; // Change direction to increasing
+            // Ensure ORBT and NCLS values are within the 0 to 1000 range
+            if (orbtValue > 1000) {
+                orbtValue = 1000;
+                orbtDirection = -1;
+            } else if (orbtValue < 0) {
+                orbtValue = 0;
+                orbtDirection = 1;
             }
 
-            orbitSlider.value = orbitValue;
-
-            // Update nucleus slider
-            let nucleusValue = parseInt(nucleusSlider.value);
-            nucleusValue += nucleusDirection;
-
-            if (nucleusValue >= nucleusMax) {
-                nucleusValue = nucleusMax;
-                nucleusDirection = -1; // Change direction to decreasing
-            } else if (nucleusValue <= nucleusMin) {
-                nucleusValue = nucleusMin;
-                nucleusDirection = 1; // Change direction to increasing
+            if (nclsValue > 1000) {
+                nclsValue = 1000;
+                nclsDirection = -1;
+            } else if (nclsValue < 0) {
+                nclsValue = 0;
+                nclsDirection = 1;
             }
 
-            nucleusSlider.value = nucleusValue;
+            // Set the font-variation-settings property
+            atomicWord.style.fontVariationSettings = `"ORBT" ${orbtValue}, "NCLS" ${nclsValue}`;
 
-            // Update the font variation based on slider values
-            updateFontVariation();
-        }, 5); // Control animation speed
-    }
+            // Update color based on ORBT value using a color palette similar to the electrons
+            switch (Math.floor((orbtValue / 1000) * 4) % 4) {
+                case 0:
+                    atomicWord.style.color = "#FF5733"; // Red-Orange
+                    break;
+                case 1:
+                    atomicWord.style.color = "#FF33A8"; // Pink
+                    break;
+                case 2:
+                    atomicWord.style.color = "#A3FF33"; // Light Green
+                    break;
+                case 3:
+                    atomicWord.style.color = "#33FF57"; // Green
+                    break;
+            }
 
-    function stopAnimation() {
-        clearInterval(intervalId);
-    }
-
-    playPauseButton.addEventListener('click', () => {
-        if (isPlaying) {
-            stopAnimation();
-            playIconPolygon.setAttribute('points', '5,3 19,12 5,21'); // Change to play icon
-        } else {
-            startAnimation();
-            playIconPolygon.setAttribute('points', '6,4 6,20 10,20 10,4 14,4 14,20 18,20 18,4'); // Change to pause icon
+            // Continue the animation loop
+            requestAnimationFrame(animateAtomicWord);
         }
-        isPlaying = !isPlaying;
-    });
-		
-		  // Make floaters draggable
+
+        // Start the animation
+        animateAtomicWord();
+
+        // Create the custom cursor element
+        let cursor = document.createElement('div');
+        cursor.classList.add('cursor');
+        document.body.appendChild(cursor);
+
+        // Track mouse movements for custom cursor positioning
+        document.addEventListener('mousemove', (e) => {
+            // Update cursor position even if scrollbar is dragged
+            cursor.style.left = `${e.pageX - 10}px`;
+            cursor.style.top = `${e.pageY - 10}px`;
+
+            // Add a trailing effect
+            const trail = document.createElement('div');
+            trail.classList.add('trail');
+            trail.style.left = `${e.pageX - 10}px`;
+            trail.style.top = `${e.pageY - 10}px`;
+            document.body.appendChild(trail);
+
+            setTimeout(() => {
+                trail.remove();
+            }, 500);
+        });
+
+
+        // Particles font variation on hover with smooth transitions
+        document.querySelectorAll('.particles .char').forEach(char => {
+            char.addEventListener('mouseover', () => {
+                char.style.transition = "font-variation-settings 3s ease, color 3s ease, transform 4s ease";
+                char.style.fontVariationSettings = "'POSI' 1000, 'SHAP' 1000";
+                char.style.transform = "scale(4)";
+                char.style.color = "#FFFF00";
+                char.style.zIndex = "10";
+            });
+
+            char.addEventListener('mouseout', () => {
+                char.style.transition = "font-variation-settings 3s ease, color 3s ease, transform 4s ease";
+                char.style.fontVariationSettings = "'POSI' 0, 'SHAP' 0";
+                char.style.transform = "scale(1)";
+                char.style.color = "#4D4DFF";
+                char.style.zIndex = "";
+            });
+        });
+
+        // Particles font variation on hover with smooth transitions for .chartwo
+        document.querySelectorAll('.particles .chartwo').forEach(chartwo => {
+            chartwo.addEventListener('mouseover', () => {
+                chartwo.style.transition = "font-variation-settings 3s ease, color 3s ease, transform 4s ease";
+                chartwo.style.fontVariationSettings = "'POSI' 1000, 'SHAP' 1000";
+                chartwo.style.transform = "scale(2)";
+                chartwo.style.color = "#FFFF00";
+                chartwo.style.zIndex = "10";
+            });
+
+            chartwo.addEventListener('mouseout', () => {
+                chartwo.style.transition = "font-variation-settings 3s ease, color 3s ease, transform 4s ease";
+                chartwo.style.fontVariationSettings = "'POSI' 0, 'SHAP' 0";
+                chartwo.style.transform = "scale(1)";
+                chartwo.style.color = "#4D4DFF";
+                chartwo.style.zIndex = "";
+            });
+        });
+
+        // Generate electrons
+        for (let i = 0; i < 100; i++) {
+            const electron = document.createElement("div");
+            electron.classList.add("electron");
+            electron.style.top = `${Math.random() * 100}vh`;
+            electron.style.left = `${Math.random() * 100}vw`;
+            electron.style.animationDuration = `${10 + Math.random() * 5}s`;
+            document.body.appendChild(electron);
+        }
+
+        // Update Atomic font based on slider inputs
+        const orbitSlider = document.getElementById('orbitSlider');
+        const nucleusSlider = document.getElementById('nucleusSlider');
+        const textBox = document.querySelector('.text-box');
+
+        function updateFontVariation() {
+            const orbit = orbitSlider.value;
+            const nucleus = nucleusSlider.value;
+            textBox.style.fontVariationSettings = `"ORBT" ${orbit}, "NCLS" ${nucleus}`;
+        }
+
+        orbitSlider.addEventListener('input', updateFontVariation);
+        nucleusSlider.addEventListener('input', updateFontVariation);
+
+
+        // Automatic Play Button Functionality
+        const playPauseButton = document.getElementById('playPauseButton');
+        const playIconPolygon = document.getElementById('playIconPolygon');
+        let isPlaying = false;
+        let intervalId;
+
+        // Direction variables to track if sliders are increasing or decreasing
+        let orbitDirection = 1; // Remember, 1 means increasing, -1 means decreasing
+        let nucleusDirection = 1;
+
+        function startAnimation() {
+            const orbitMin = parseInt(orbitSlider.min);
+            const orbitMax = parseInt(orbitSlider.max);
+            const nucleusMin = parseInt(nucleusSlider.min);
+            const nucleusMax = parseInt(nucleusSlider.max);
+
+            intervalId = setInterval(() => {
+                // Update orbit slider
+                let orbitValue = parseInt(orbitSlider.value);
+                orbitValue += orbitDirection;
+
+                if (orbitValue >= orbitMax) {
+                    orbitValue = orbitMax;
+                    orbitDirection = -1; // Change direction to decreasing
+                } else if (orbitValue <= orbitMin) {
+                    orbitValue = orbitMin;
+                    orbitDirection = 1; // Change direction to increasing
+                }
+
+                orbitSlider.value = orbitValue;
+
+                // Update nucleus slider
+                let nucleusValue = parseInt(nucleusSlider.value);
+                nucleusValue += nucleusDirection;
+
+                if (nucleusValue >= nucleusMax) {
+                    nucleusValue = nucleusMax;
+                    nucleusDirection = -1; // Change direction to decreasing
+                } else if (nucleusValue <= nucleusMin) {
+                    nucleusValue = nucleusMin;
+                    nucleusDirection = 1; // Change direction to increasing
+                }
+
+                nucleusSlider.value = nucleusValue;
+
+                // Update the font variation based on slider values
+                updateFontVariation();
+            }, 5); // Control animation speed
+        }
+
+        function stopAnimation() {
+            clearInterval(intervalId);
+        }
+
+        playPauseButton.addEventListener('click', () => {
+            if (isPlaying) {
+                stopAnimation();
+                playIconPolygon.setAttribute('points', '5,3 19,12 5,21'); // Change to play icon
+            } else {
+                startAnimation();
+                playIconPolygon.setAttribute('points', '6,4 6,20 10,20 10,4 14,4 14,20 18,20 18,4'); // Change to pause icon
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Make floaters draggable
         const floaters = document.querySelectorAll('.floater');
         floaters.forEach(floater => {
             floater.onmousedown = function (event) {
@@ -865,9 +1010,9 @@ Driven by a systematic approach to depth, complexity, and generative methods, Qu
                 return false;
             };
         });
-        
-        
-</script>
+
+
+    </script>
 
 </body>
 
