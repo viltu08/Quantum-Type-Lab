@@ -332,6 +332,54 @@
             scrollbar-width: none;
         }
 
+		
+		 /* Info button styles */
+        .info-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            border: 1px solid yellow;
+            border-radius: 50%;
+            color: #FFFF00;
+            font-family: 'Space Mono', monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, border-color 0.3s;
+            z-index: 1100;
+        }
+
+        .info-button:hover {
+            background-color: transparent;
+            border-color: #FFFF00;
+            color: #4D4DFF;
+        }
+
+        .info-dialogue {
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            width: 600px;
+            padding: 20px;
+            border: 1px solid yellow;
+            border-radius: 15px;
+            background-color: black;
+            color: #FFFF00;
+            font-family: 'Space Mono', monospace;
+            display: none;
+            z-index: 1100;
+			text-align: left;
+			font-size: 15px;
+        }
+
+        .info-button:hover + .info-dialogue {
+            display: block;
+        }
+		
+		
         /* Keyframes for the pulsating border */
         @keyframes pulsate-border {
             0% {
@@ -517,6 +565,11 @@
                 font-size: 70px;
             }
         }
+		
+		.info-dialogue {
+			font-size: 20px;
+			width: 400px;
+		}
 
         @media (max-width: 600px) {
 
@@ -580,6 +633,11 @@
                 font-size: 50px;
             }
         }
+		
+		.info-dialogue {
+			font-size: 15px;
+			width: 400px;
+		}
 
         @media (max-width: 480px) {
 
@@ -642,12 +700,42 @@
                 font-size: 40px;
             }
         }
+		
+		.info-dialogue {
+			font-size: 15px;
+			width: 400px;
+		}
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="section">
+			
+			  <!-- Info Button -->
+            <div class="info-button">i</div>
+            <div class="info-dialogue">
+					<span style="color:#4D4DFF">
+               Quantum Type Lab is designed by Vishakha Ruhela.
+				</span>
+				<br><br>
+				<span style="color:#4D4DFF">PARTICLES</span> is a pixel typeface inspired by movement of particles at a microscopic level.
+<br><br>
+				Each glyph disintegrates its pixels into circular particles.
+	<br><br>	
+				<span style="color:#4D4DFF">
+ATOMIC </span>is an experimental typeface based on an open source font ‘Necto Mono Regular’.
+<br><br>
+Each glyph behaves like an atom with orbits, electrons and nuclei.
+		<br><br>		
+The variation occurs with rotation and scale change of all the
+elements to transform from ground state to singularity when the
+core collapses into itself.
+
+
+            </div>
+			
+			
             <h1 class="particles">
                 <div class="line">
                     <span class="char">Q</span>
