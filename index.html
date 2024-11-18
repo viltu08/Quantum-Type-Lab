@@ -102,7 +102,7 @@
             padding: 100px;
             text-align: center;
             position: relative;
-			margin-top: 200px;
+            margin-top: 200px;
         }
 
         /* How selection works for text*/
@@ -629,10 +629,10 @@
         .animated-char:nth-child(26) {
             animation-delay: 2.5s;
         }
-		
-		/* Animation for particles pattern */
-		
-		 .particle-animation {
+
+        /* Animation for particles pattern */
+
+        .particle-animation {
             display: flex;
             align-items: flex-start;
             justify-content: center;
@@ -651,28 +651,31 @@
             font-size: 20rem;
             text-align: center;
             max-width: 100%;
-			line-height: 120px;
-			color: transparent;
+            line-height: 120px;
+            color: transparent;
             -webkit-text-stroke: 2px #FF5733;
-			mix-blend-mode: exclusion;
+            mix-blend-mode: exclusion;
         }
 
-.animated-PAR {
-    animation: animateParticles 2s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-}
+        .animated-PAR {
+            animation: animateParticles 2s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+        }
 
-@keyframes animateParticles {
-    0%, 100% {
-        font-variation-settings: 'POSI' 0, 'SHAP' 0;
-        transform: scale(1);
-        color: #4D4DFF;
-    }
-    50% {
-        font-variation-settings: 'POSI' 1000, 'SHAP' 1000;
-        transform: scale(1.5);
-        color: #FF33A8;
-    }
-}
+        @keyframes animateParticles {
+
+            0%,
+            100% {
+                font-variation-settings: 'POSI' 0, 'SHAP' 0;
+                transform: scale(1);
+                color: #4D4DFF;
+            }
+
+            50% {
+                font-variation-settings: 'POSI' 1000, 'SHAP' 1000;
+                transform: scale(1.5);
+                color: #FF33A8;
+            }
+        }
 
 
         /* Adding delay to each character for a sequential animation */
@@ -779,8 +782,8 @@
         .animated-PAR:nth-child(26) {
             animation-delay: 2.5s;
         }
-		
-		  .animated-PAR:nth-child(27) {
+
+        .animated-PAR:nth-child(27) {
             animation-delay: 2.6s;
         }
 
@@ -939,8 +942,8 @@
         }
 
         /*Media queries*/
-		
-		 @media (max-width: 1024px) {
+
+        @media (max-width: 1024px) {
 
             /* Change container layout to column for vertical scrolling */
             .container {
@@ -976,7 +979,8 @@
                 align-items: center;
                 justify-content: center;
             }
- #atomic-word {
+
+            #atomic-word {
                 font-size: 180px;
                 margin: 5px;
             }
@@ -1014,9 +1018,9 @@
         }
 
         #animated-particles {
-			align-items: center;
-			font-size: 7rem;
-		}
+            align-items: center;
+            font-size: 7rem;
+        }
 
         @media (max-width: 768px) {
 
@@ -1054,7 +1058,8 @@
                 align-items: center;
                 justify-content: center;
             }
- #atomic-word {
+
+            #atomic-word {
                 font-size: 150px;
                 margin: 5px;
             }
@@ -1091,10 +1096,10 @@
             font-size: 10rem;
         }
 
-		#animated-particles {
-			align-items: center;
-			font-size: 7rem;
-		}
+        #animated-particles {
+            align-items: center;
+            font-size: 7rem;
+        }
 
         @media (max-width: 600px) {
 
@@ -1168,11 +1173,11 @@
             align-items: center;
             font-size: 10rem;
         }
-		
-			#animated-particles {
-			align-items: center;
-			font-size:5rem;
-		}
+
+        #animated-particles {
+            align-items: center;
+            font-size: 5rem;
+        }
 
         @media (max-width: 480px) {
 
@@ -1245,11 +1250,11 @@
             align-items: center;
             font-size: 10rem;
         }
-		
-			#animated-particles {
-			align-items: center;
-			font-size: 5rem;
-		}
+
+        #animated-particles {
+            align-items: center;
+            font-size: 5rem;
+        }
     </style>
 </head>
 
@@ -1321,14 +1326,14 @@
 
             <div id="atomic-word">
                 .-.-.-.-.<br>.-.-.-.-.-.<br>.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.<br>.-.-.-.-.-.<br>.-.-.-.-.
-				 <br>.-.-.-.-.<br>.-.-.-.-.-.<br>.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.<br>.-.-.-.-.-.<br>.-.-.-.-.
+                <br>.-.-.-.-.<br>.-.-.-.-.-.<br>.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.-.<br>.-.-.-.-.-.-.<br>.-.-.-.-.-.<br>.-.-.-.-.
             </div>
-           
+
 
         </div>
 
         <div class="sectionthree" style="background-color: black;">
-    
+
 
             <!-- Text input with animated gradient border -->
             <div class="text-box-wrapper">
@@ -1351,7 +1356,7 @@
                 <input type="range" id="nucleusSlider" min="0" max="1000" step="1" value="0" />
             </div>
         </div>
-		<div class="section" style="background-color: black;">
+        <div class="section" style="background-color: black;">
             <div class="alphabet-animation">
                 <div id="animated-alphabets">
                     <span class="animated-char">A</span>
@@ -1383,7 +1388,7 @@
                 </div>
             </div>
         </div>
-		
+
 
         <div class="section">
             <h1 class="particles">
@@ -1409,70 +1414,71 @@
                 Driven by a systematic approach to depth, complexity, and generative methods, Quantum Type Lab strives
                 to merge scientific rigor with artistic expression. </div>
         </div>
-		
-		<div class="section" style="background-color: black;">
-            <div class="particle-animation">
-             <div id="animated-particles">
-    <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				 <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-				     <span class="animated-PAR">*</span>
-				    <span class="animated-PAR">*</span>
-	
 
-</div>
+        <div class="section" style="background-color: black;">
+            <div class="particle-animation">
+                <div id="animated-particles">
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+                    <span class="animated-PAR">*</span>
+
+
+                </div>
 
             </div>
         </div>
         <div class="section" style="background-color: #000000;">
-            <div class="floater" style="top: 100px; left: 1200px;"> Quantum Type Lab uses science as a tool to expand our
+            <div class="floater" style="top: 100px; left: 1200px;"> Quantum Type Lab uses science as a tool to expand
+                our
                 perception and understanding, bridging design aesthetics with scientific findings.</div>
             <div class="floater" style="top: 600px; left: 100px;"> This amalgamation opens a world of unique
                 possibilities of typographic behavior.</div>
@@ -1558,7 +1564,7 @@
             </div>
         </div>
 
-        
+
     </div>
 
     <script>
